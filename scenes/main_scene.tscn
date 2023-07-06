@@ -7,3 +7,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(488, 321)
 texture = ExtResource("1_hqplj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(642, 336)
+texture = ExtResource("1_hqplj")
