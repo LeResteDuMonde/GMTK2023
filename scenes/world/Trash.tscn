@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://15l7vkosvgpf"]
+[gd_scene load_steps=4 format=3 uid="uid://15l7vkosvgpf"]
 
 [ext_resource type="Texture2D" uid="uid://6iufbe7ywh5j" path="res://sprite/trash.png" id="1_4fgq0"]
+[ext_resource type="Script" path="res://script/trash.gd" id="1_mqem8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbip"]
 size = Vector2(164, 300)
 
 [node name="Trash" type="Node2D"]
+script = ExtResource("1_mqem8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4fgq0")

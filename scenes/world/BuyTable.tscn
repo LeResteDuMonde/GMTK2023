@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://0rnp00r0r4kl"]
+[gd_scene load_steps=4 format=3 uid="uid://0rnp00r0r4kl"]
 
 [ext_resource type="Texture2D" uid="uid://dtmqm8p85jpa3" path="res://sprite/buyTable.png" id="1_lg2u5"]
+[ext_resource type="Script" path="res://script/buyTable.gd" id="1_wcmg1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbip"]
 size = Vector2(501, 300)
 
 [node name="BuyTable" type="Node2D"]
+script = ExtResource("1_wcmg1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lg2u5")

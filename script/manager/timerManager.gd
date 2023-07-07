@@ -19,7 +19,7 @@ func _process(delta):
 		
 	if(sellerTimer <= 0):
 		sellerTimer = sellerTime
-		# TODO new seller
+		GameManager.main.get_node("BuyTable").addItem()
 	
 	buyerTimer -= delta
 	sellerTimer -= delta
@@ -33,6 +33,10 @@ func start():
 	buyerTimer = buyerTime
 	sellerTimer = sellerTime
 	running = true
+	
+func sleep(time):
+	await get_tree().create_timer(time).timeout
+	return
 	
 func stop():
 	running = false

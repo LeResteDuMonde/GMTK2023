@@ -21,6 +21,7 @@ InputManager="*res://script/manager/inputManager.gd"
 GameManager="*res://script/manager/gameManager.gd"
 AudioManager="*res://script/manager/audioManager.gd"
 TimerManager="*res://script/manager/timerManager.gd"
+TranslationManager="*res://script/manager/translationManager.gd"
 
 [display]
 
