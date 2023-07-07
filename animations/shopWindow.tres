@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bxapr6kdilqe4"]
+
+[ext_resource type="Texture2D" uid="uid://cs26y4agnyltb" path="res://sprite/world/shopWindow1.PNG" id="1_yulej"]
+[ext_resource type="Texture2D" uid="uid://n808yub34atv" path="res://sprite/world/shopWindow2.PNG" id="2_3mfjd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yulej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3mfjd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1582oacrbfs5"]
+
+[ext_resource type="SpriteFrames" uid="uid://bxapr6kdilqe4" path="res://animations/shopWindow.tres" id="1_is8do"]
+[ext_resource type="Texture2D" uid="uid://66u50kecphox" path="res://sprite/world/inventory.PNG" id="1_xospb"]
+[ext_resource type="PackedScene" uid="uid://dnyygq0w78u2k" path="res://scenes/world/Stock.tscn" id="2_o5vl4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-960, -540)
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
+
+[node name="ShopWindow" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_is8do")
+frame_progress = 0.516916
+
+[node name="Inventory" type="Sprite2D" parent="."]
+texture = ExtResource("1_xospb")
+
+[node name="Stock" parent="Inventory" instance=ExtResource("2_o5vl4")]
+position = Vector2(-359, 167)

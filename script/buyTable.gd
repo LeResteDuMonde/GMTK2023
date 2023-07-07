@@ -7,7 +7,7 @@ func addItem():
 #	print("newItem")
 	var item = item_r.instantiate()
 	item.position = position
-	GameManager.main.add_child(item)
+	GameManager.main.get_node("Items").add_child(item)
 	
 	if(currentItem != null): 
 		if(currentItem.position == position):
