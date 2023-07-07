@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var spaces: Array[Vector2] = []
+@export var origin: Vector2i = Vector2i(0,0)
+
 @onready var highlight = get_node("Highlight")
 @onready var area = get_node("Area2D")
 
@@ -39,6 +42,8 @@ func can_release():
 		var parent = area.get_node("../")
 		if parent.name == "BuyTable" || parent.name == "SellTable" || parent.name == "Trash":
 			return true
+		if parent.name == "Stock":
+			return parent.can_be_placed(self)
 	return false
 			
 func release():

@@ -9,8 +9,10 @@ shader = ExtResource("3_6pepf")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 2.0
 
-[node name="Test" type="Node2D"]
+[node name="Tetromino" type="Node2D"]
 script = ExtResource("1_s0rd8")
+spaces = Array[Vector2]([Vector2(0, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(0, 1)])
+origin = Vector2i(0, 50)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -21,7 +23,6 @@ polygon = PackedVector2Array(143, -95, 143, -2, 49, -1, 48, 97, -46, 96, -47, -1
 texture = ExtResource("2_xfvpg")
 
 [node name="Highlight" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_nc4a1")
 texture = ExtResource("2_xfvpg")
 
