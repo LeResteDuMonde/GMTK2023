@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 InputManager="*res://script/manager/inputManager.gd"
 GameManager="*res://script/manager/gameManager.gd"
 AudioManager="*res://script/manager/audioManager.gd"
+TimerManager="*res://script/manager/timerManager.gd"
 
 [display]
 
