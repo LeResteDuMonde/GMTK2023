@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8jobm0sapljt"]
+
+[ext_resource type="Texture2D" uid="uid://c643nuqbb5vyy" path="res://sprite/sellTable.png" id="1_m4g56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ysjc"]
+size = Vector2(501, 300)
+
+[node name="SellTable" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m4g56")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_5ysjc")
