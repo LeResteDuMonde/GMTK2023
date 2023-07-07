@@ -20,11 +20,15 @@ scale = Vector2(0.75, 0.75)
 position = Vector2(18, 702)
 
 [node name="Stock" parent="." instance=ExtResource("4_3blo4")]
-position = Vector2(483, 461)
+position = Vector2(576, 402)
 
-[node name="Test" parent="." instance=ExtResource("1_sebe6")]
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Item1" parent="Items" instance=ExtResource("1_sebe6")]
 position = Vector2(189, 113)
-scale = Vector2(0.65, 0.65)
+
+[node name="Item2" parent="Items" instance=ExtResource("1_sebe6")]
+position = Vector2(189, 113)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

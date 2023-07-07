@@ -4,7 +4,10 @@ extends Node2D
 @export var width = 7
 @export var height = 5
 
+@onready var topLeft = position - Vector2(width*cellSize/2,height*cellSize/2)
+
 var grid = []
+var current_items = []
 
 func _ready():
 	grid.resize(height)
@@ -15,9 +18,9 @@ func _ready():
 
 ## Calculate the relative position in the grid
 func grid_pos(item):
-	var relPos = item.position - position - Vector2(item.origin);
-	relPos = relPos + Vector2(width*cellSize/2,height*cellSize/2)
-	relPos = Vector2i(relPos.x / cellSize, relPos.y/cellSize)
+	var itemOrigin = item.position + Vector2(item.origin)
+	var relPos = itemOrigin - topLeft;
+	relPos = Vector2(round(relPos.x/cellSize), round(relPos.y/cellSize))
 	return relPos
 	
 func spaces_are_free(relPos, spaces):
@@ -32,3 +35,19 @@ func spaces_are_free(relPos, spaces):
 	
 func can_be_placed(item):
 	return spaces_are_free(grid_pos(item), item.spaces)
+	
+func place(item):
+	var relPos = grid_pos(item)
+	if spaces_are_free(relPos, item.spaces):
+		for s in item.spaces:
+			grid[relPos.y + s.y][relPos.x + s.x] = true
+		current_items.append(item)
+		return topLeft - Vector2(item.origin) + Vector2(relPos) * cellSize
+	return null
+
+func remove(item):
+	if current_items.has(item):
+		var relPos = grid_pos(item)
+		for s in item.spaces:
+			grid[relPos.y + s.y][relPos.x + s.x] = false
+		current_items.erase(item)

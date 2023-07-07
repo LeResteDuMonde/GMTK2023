@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var spaces: Array[Vector2] = []
+
+# Offset of the top left corner of square (0,0)
 @export var origin: Vector2i = Vector2i(0,0)
 
 @onready var highlight = get_node("Highlight")
@@ -18,7 +20,7 @@ func _process(delta):
 	if dragging:
 		var mousepos = get_viewport().get_mouse_position()
 		self.position = Vector2(mousepos.x, mousepos.y)
-		if can_release():
+		if can_place():
 			shader_color = green_color
 		else:
 			shader_color = red_color
@@ -36,7 +38,7 @@ func _on_mouse_exited():
 	if highlight != null:
 		highlight.visible = false
 		
-func can_release():
+func can_place():
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
@@ -46,7 +48,18 @@ func can_release():
 			return parent.can_be_placed(self)
 	return false
 			
-func release():
+func take():
+	var areas = area.get_overlapping_areas()
+	for area in areas:
+		var parent = area.get_node("../")
+		if parent.name == "BuyTable":
+			pass # TODO
+		if parent.name == "SellTable":
+			pass # TODO
+		if parent.name == "Stock":
+			parent.remove(self)
+	
+func place():
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
@@ -56,16 +69,21 @@ func release():
 			return parent.position
 		if parent.name == "Trash":
 			queue_free()
+		if parent.name == "Stock":
+			return parent.place(self)
 	# Otherwise, no !
 	return null
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not dragging and entered:
-			# Catch the object and start dragging it
+			take()
+			move_to_front()
+			get_viewport().set_input_as_handled()
 			dragging = true
 		elif dragging:
-			var releasedpos = release()
+			var releasedpos = place()
 			if releasedpos:
 				dragging = false
 				self.position = releasedpos
+			get_viewport().set_input_as_handled()
