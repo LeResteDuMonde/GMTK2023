@@ -32,8 +32,9 @@ func loadItems(path):
 	else:
 		print("An error occurred when trying to access the path.")
 	
-func take():
-	currentItem = null
+func take(item):
+	if currentItem == item:
+		currentItem = null
 
 func addItem():
 #	print("newItem")

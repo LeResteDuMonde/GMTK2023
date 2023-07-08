@@ -10,5 +10,5 @@ func trash(item):
 
 func throw(item):
 	await TranslationManager.translate(item,position,0.5)
-	if not item.dragging:
+	if item and not item.dragging:
 		trash(item)
