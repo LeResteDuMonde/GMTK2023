@@ -33,4 +33,4 @@ func release_hover():
 	cursor.play("open")
 	
 func reset():
-	dragging = false
+	release()

@@ -18,9 +18,6 @@ func _ready():
 #	AudioManager.play("sounds/hit")
 	
 func start():
-	TimerManager.start()
-	
-func stop():
 	# Reset input status
 	CursorManager.reset()
 	# Destroy all items
@@ -34,7 +31,10 @@ func stop():
 	# Reset money and health
 	MoneyManager.reset()
 	HealthManager.reset()
-	# Reset timer
+	# Start time
+	TimerManager.start()
+	
+func stop():
 	TimerManager.stop()
 
 func gameOver():
