@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://mg7fcrkvqfn4"]
+
+[ext_resource type="Texture2D" uid="uid://bhn0v3tjnl3p0" path="res://sprite/world/highlightCellOk.png" id="1_ripe5"]
+
+[node name="HighlightCell" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.98, 0.98)
+texture = ExtResource("1_ripe5")
