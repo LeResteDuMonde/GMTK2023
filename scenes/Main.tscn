@@ -25,3 +25,5 @@ position = Vector2(960, 540)
 
 [node name="GameOver" parent="Titles" instance=ExtResource("5_6y8e3")]
 visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]

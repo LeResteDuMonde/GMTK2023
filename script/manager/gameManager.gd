@@ -20,9 +20,6 @@ func _ready():
 func start():
 	# Reset input status
 	CursorManager.reset()
-	# Destroy all items
-	for i in items.get_children():
-		if i: i.queue_free()
 	# Reset table and buyer
 	buyTable.reset()
 	sellWindow.removeBuyer()
@@ -35,6 +32,12 @@ func start():
 	TimerManager.start()
 	
 func stop():
+	# Reset input status
+	CursorManager.reset()
+	# Destroy all items
+	for i in items.get_children():
+		if i: i.queue_free()
+	# Stop timer
 	TimerManager.stop()
 
 func gameOver():

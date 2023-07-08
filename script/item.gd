@@ -95,8 +95,6 @@ func take():
 		var parent = area.get_node("../")
 		if parent.name == "BuyTable":
 			parent.take()
-		if parent.name == "SellWindow":
-			pass # TODO
 		if parent.name == "Stock":
 			parent.remove(self)
 	CursorManager.take()

@@ -7,12 +7,13 @@ extends Node
 #@onready var destructScreen = ui.get_node("DestructScreen")
 #@onready var endScreen = ui.get_node("EndScreen")
 #
-#func _ready():
-#	# Show Title Screen first
-#	showTitleScreen()
-#
+func _ready():
+	# Show Title Screen first
+	showTitleScreen()
+
 func showTitleScreen():
 	print("Show Title Screen")
+	AudioManager.start_game_music()
 	titleScreen.visible = true
 
 func showGameOverScreen():
