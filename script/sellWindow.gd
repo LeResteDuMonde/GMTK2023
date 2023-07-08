@@ -38,6 +38,7 @@ func sell(item):
 	if(item.size == size && item.type == type):
 		MoneyManager.addMoney(item.getPrice()*2)
 	else:
+		MoneyManager.addMoney(0)
 		disatifyBuyer()
 	item.queue_free()
 	

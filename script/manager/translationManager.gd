@@ -22,6 +22,7 @@ func _process(delta):
 		if(t.object != null):
 			t.object.position = lerp(t.start,t.target,t.t)
 			t.t += delta / t.time
+			if(t.t>1): translations.erase(t)
 		else:
 			translations.erase(t)
 	

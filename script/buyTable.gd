@@ -18,10 +18,10 @@ func loadItems(path):
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
+#			if dir.current_is_dir():
+#				print("Found directory: " + file_name)
+#			else:
+#				print("Found file: " + file_name)
 			if '.remap' in file_name: # for export
 				file_name = file_name.trim_suffix('.remap')
 			items.push_back(load(path + file_name))
@@ -36,9 +36,10 @@ func addItem():
 #	print("newItem")
 	var item = items.pick_random().instantiate()
 	
-	MoneyManager.pay(item.getPrice())
+	if(!MoneyManager.pay(item.getPrice())): return
 	
-	item.position = position
+	item.position = position + Vector2(-500,0)
+	TranslationManager.translate(item,position,0.5)
 	GameManager.main.get_node("World/Items").add_child(item)
 	
 	if(currentItem != null): 

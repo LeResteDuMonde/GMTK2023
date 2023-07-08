@@ -87,6 +87,7 @@ func can_place():
 	return false
 			
 func take():
+	if(area == null): return
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
