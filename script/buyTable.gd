@@ -37,9 +37,13 @@ func take():
 
 func addItem():
 #	print("newItem")
+	
 	var item = items.pick_random().instantiate()
 	
-	if(!MoneyManager.pay(item.getPrice())): return
+	if(!MoneyManager.pay(item.getPrice())):
+		AudioManager.play("sounds/tooExpensive")
+		return
+	AudioManager.play("sounds/buy")
 	
 	item.position = position + Vector2(-500,0)
 	TranslationManager.translate(item,position,0.5)

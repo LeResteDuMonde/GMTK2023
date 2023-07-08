@@ -41,13 +41,14 @@ func newBuyer():
 		3: itemSprite += "Sword"
 	
 	item.play(itemSprite)
+	AudioManager.play("sounds/appear",2)
 	
 	buyer.visible = true
-	
 	enabled = true
 	
 func sell(item):
 	if(item.size == size && item.type == type):
+		AudioManager.play("sounds/sell")
 		MoneyManager.addMoney(item.getPrice()*2)
 	else:
 		MoneyManager.addMoney(0)
@@ -60,4 +61,5 @@ func removeBuyer():
 	buyer.visible = false
 	
 func disatifyBuyer():
+	AudioManager.play("sounds/disatisfied",3)
 	HealthManager.damage()

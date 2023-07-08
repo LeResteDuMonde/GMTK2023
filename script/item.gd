@@ -140,10 +140,14 @@ func _unhandled_input(event):
 			if can_place():
 				dragging = false
 				place()
-			get_viewport().set_input_as_handled()
+			else:
+				AudioManager.play("sounds/cantPlace")
+				get_viewport().set_input_as_handled()
 	if event.is_action_released("rotate_left") and dragging:
+		AudioManager.play("sounds/rotate")
 		rotation_degrees -= 90
 	if event.is_action_released("rotate_right") and dragging:
+		AudioManager.play("sounds/rotate")
 		rotation_degrees += 90
 
 @export var offset = Vector2(0,0)

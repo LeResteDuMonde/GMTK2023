@@ -66,16 +66,16 @@ func can_be_placed(item):
 func place(item):
 	var relPos = grid_pos(item)
 	var offset = item.get_rotated_offset()
-	if cells_are_free(relPos, item):
-		un_highlight()
-		#print("place")
-		for s in item.get_rotated_cells():
-			var cellPos = Vector2i(relPos) + s
-			#print(cellPos)	
-			grid[cellPos.y][cellPos.x] = true
-		current_items.append(item)
-		return topLeft - offset * cellSize + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
-	return null
+#	if cells_are_free(relPos, item):
+	un_highlight()
+	#print("place")
+	for s in item.get_rotated_cells():
+		var cellPos = Vector2i(relPos) + s
+		#print(cellPos)	
+		grid[cellPos.y][cellPos.x] = true
+	current_items.append(item)
+	return topLeft - offset * cellSize + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
+#	return null
 
 func remove(item):
 	if current_items.has(item):
