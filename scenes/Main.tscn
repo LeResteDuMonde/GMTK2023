@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://o3rnlecftqhv"]
+[gd_scene load_steps=4 format=3 uid="uid://b866krg6stdqx"]
+
+[ext_resource type="PackedScene" uid="uid://cn53fdw3sg7jy" path="res://scenes/World.tscn" id="1_dosi0"]
+[ext_resource type="SpriteFrames" uid="uid://b4xrh6g6r4bmj" path="res://animations/cursor.tres" id="2_hyfxq"]
+[ext_resource type="Script" path="res://script/cursor.gd" id="3_7116h"]
 
 [node name="Main" type="Node2D"]
+
+[node name="World" parent="." instance=ExtResource("1_dosi0")]
+
+[node name="Cursor" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_hyfxq")
+script = ExtResource("3_7116h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

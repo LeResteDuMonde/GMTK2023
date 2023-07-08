@@ -2,7 +2,7 @@ extends Node
 
 var web
 var main
-var main_r = preload("res://scenes/Main.tscn")
+#var main_r = preload("res://scenes/Main.tscn")
 var root
 
 func _ready():
