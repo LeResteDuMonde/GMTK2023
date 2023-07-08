@@ -119,6 +119,14 @@ func place():
 		if parent.name == "Stock":
 			CursorManager.release_hover()
 			position = parent.place(self)
+			
+			var soundType
+			match type:
+				1: soundType = "Armor"
+				2: soundType = "Potion"
+				3: soundType = "Sword"
+			
+			AudioManager.play("sounds/deposit"+soundType)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
