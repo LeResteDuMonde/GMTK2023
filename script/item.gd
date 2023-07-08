@@ -48,6 +48,7 @@ func _ready():
 		3: itemSprite += "Sword"
 	
 	tableSprite.play(itemSprite)
+	tableSpriteHighLight.play(itemSprite)
 	
 func _process(delta):
 	var shader_color

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://clnhfa4uhq1gm"]
+
+[ext_resource type="Script" path="res://script/item.gd" id="1_q7xfv"]
+[ext_resource type="Texture2D" uid="uid://bl8f51mgmtucw" path="res://sprite/items/itemRedSword3.PNG" id="2_4fg23"]
+[ext_resource type="Shader" path="res://shader/outline.gdshader" id="3_1uswb"]
+[ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="4_hcbos"]
+[ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="5_r3ycm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1np5q"]
+shader = ExtResource("3_1uswb")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 2.0
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_q7xfv")
+cells = Array[Vector2]([Vector2(0, 2), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0), Vector2(1, -1), Vector2(0, -1), Vector2(0, -2)])
+size = 3
+type = 3
+offset = Vector2(-0.5, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(77, -149)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-93, 219, -62, 217.5, 7, 153.5, 34, 84, 1.5, 0.5, -34.5, -0.5, -54.5, -81, -103, -67.5, -119.5, 10.5, -35, 122, -80, 124.5, -95, 140)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4fg23")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_1np5q")
+texture = ExtResource("2_4fg23")
+
+[node name="TableSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+sprite_frames = ExtResource("4_hcbos")
+animation = &"redSword"
+
+[node name="TableSpriteHighlight" type="AnimatedSprite2D" parent="."]
+visible = false
+material = ExtResource("5_r3ycm")
+position = Vector2(2, 0)
+sprite_frames = ExtResource("4_hcbos")
+animation = &"redSword"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

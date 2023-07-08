@@ -41,6 +41,7 @@ func sell(item):
 		MoneyManager.addMoney(0)
 		disatifyBuyer()
 	item.queue_free()
+	removeBuyer()	
 	
 func removeBuyer():
 	enabled = false
@@ -48,5 +49,3 @@ func removeBuyer():
 	
 func disatifyBuyer():
 	HealthManager.damage()
-	removeBuyer()
-	
