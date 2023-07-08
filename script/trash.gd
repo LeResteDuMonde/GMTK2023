@@ -6,7 +6,7 @@ func trash(item):
 	AudioManager.play("sounds/throw",3)
 	sprite.play("open")
 	if is_instance_valid(item):
-		item.call_deferred("free")
+		item.queue_free()
 
 func throw(item):
 	await TranslationManager.translate(item,position,0.5)

@@ -34,9 +34,8 @@ func highlight(x, y, scene):
 	
 func un_highlight():
 	for n in highlights.get_children():
-		print(n)
 		n.visible = false
-		n.call_deferred("free")
+		n.queue_free()
 
 ## Calculate the relative position in the grid
 func grid_pos(item):

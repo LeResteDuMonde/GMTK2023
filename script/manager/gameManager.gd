@@ -22,7 +22,7 @@ func start():
 	CursorManager.reset()
 	# Destroy all items
 	for i in items.get_children():
-		if i: i.call_deferred("free")
+		if i: i.queue_free()
 	# Reset table and buyer
 	buyTable.reset()
 	sellWindow.removeBuyer()
