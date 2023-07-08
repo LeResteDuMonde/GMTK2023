@@ -31,7 +31,7 @@ func _process(delta):
 	sellerTimerBar.scale.x = sellerTimer / sellerTime
 	
 	if(buyerTime > BUYER_TIME_MIN):
-		buyerTime = buyerTime * 1
+		buyerTime = buyerTime * 0.999
 		AudioManager.set_music_speed(BUYER_TIME_DEFAULT/buyerTime)
 #		print(buyerTime)
 	
