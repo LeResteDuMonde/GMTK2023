@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvanah5m77giw"]
+
+[ext_resource type="Script" path="res://script/item.gd" id="1_uq60a"]
+[ext_resource type="Texture2D" uid="uid://lvjavwrgakp2" path="res://sprite/items/itemBlueArmor1.PNG" id="2_xyka7"]
+[ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="3_qbse2"]
+[ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="4_37p6q"]
+
+[node name="Item" type="Node2D"]
+position = Vector2(-64, 0)
+script = ExtResource("1_uq60a")
+spaces = Array[Vector2]([Vector2(0, 0), Vector2(0, 1), Vector2(1, 1), Vector2(1, 0)])
+size = 2
+
+[node name="TableSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+sprite_frames = ExtResource("4_37p6q")
+animation = &"blueArmor"
+
+[node name="TableSpriteHighlight" type="AnimatedSprite2D" parent="."]
+visible = false
+material = ExtResource("3_qbse2")
+position = Vector2(2, 0)
+sprite_frames = ExtResource("4_37p6q")
+animation = &"blueArmor"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(33, -1, 33, 118, -94, 119.5, -94, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_xyka7")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("3_qbse2")
+texture = ExtResource("2_xyka7")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

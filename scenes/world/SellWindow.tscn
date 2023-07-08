@@ -1,97 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://cjr1efxrsl1jv"]
+[gd_scene load_steps=8 format=3 uid="uid://cjr1efxrsl1jv"]
 
 [ext_resource type="SpriteFrames" uid="uid://bxapr6kdilqe4" path="res://animations/shopWindow.tres" id="1_p0yb1"]
 [ext_resource type="PackedScene" uid="uid://2u77he1rl5u5" path="res://scenes/TimerBar.tscn" id="2_6dajr"]
 [ext_resource type="Script" path="res://script/sellWindow.gd" id="2_soq72"]
 [ext_resource type="SpriteFrames" uid="uid://clqytxs1voyvt" path="res://animations/buyer.tres" id="3_pbhjq"]
-[ext_resource type="SpriteFrames" uid="uid://vy7kkhxsowuv" path="res://bubble.tres" id="4_4mi0j"]
-[ext_resource type="Texture2D" uid="uid://jauomm5a6qp6" path="res://sprite/bubbleItem/blueArmorBubble.PNG" id="6_kfciv"]
-[ext_resource type="Texture2D" uid="uid://b0l46f3pyjr2w" path="res://sprite/bubbleItem/bluePotionBubble.PNG" id="7_45crr"]
-[ext_resource type="Texture2D" uid="uid://6h2cdelfmvd2" path="res://sprite/bubbleItem/blueSwordBubble.PNG" id="8_tl5im"]
-[ext_resource type="Texture2D" uid="uid://c7tq3soohdypg" path="res://sprite/bubbleItem/greenArmorBubble.PNG" id="9_7od70"]
-[ext_resource type="Texture2D" uid="uid://llmav821jm1w" path="res://sprite/bubbleItem/greenPotionBubble.PNG" id="10_v5l00"]
-[ext_resource type="Texture2D" uid="uid://qtkmd1nx8fh8" path="res://sprite/bubbleItem/greenSwordBubble.PNG" id="11_vxxc4"]
-[ext_resource type="Texture2D" uid="uid://binhnlkvb53gl" path="res://sprite/bubbleItem/redArmorBubble.PNG" id="12_kmjxa"]
-[ext_resource type="Texture2D" uid="uid://bfcqx2p3204ou" path="res://sprite/bubbleItem/redPotionBubble.PNG" id="13_2bseg"]
-[ext_resource type="Texture2D" uid="uid://b182cvcib5gjp" path="res://sprite/bubbleItem/redSwordBubble.PNG" id="14_74rsf"]
+[ext_resource type="SpriteFrames" uid="uid://kmivpsnsnxjh" path="res://animations/bubble.tres" id="5_lwmp7"]
+[ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="6_ws62x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqn1g"]
 size = Vector2(612.5, 545)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3llld"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_kfciv")
-}],
-"loop": true,
-"name": &"blueArmor",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_45crr")
-}],
-"loop": true,
-"name": &"bluePotion",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_tl5im")
-}],
-"loop": true,
-"name": &"blueSword",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_7od70")
-}],
-"loop": true,
-"name": &"greenArmor",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_v5l00")
-}],
-"loop": true,
-"name": &"greenPotion",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_vxxc4")
-}],
-"loop": true,
-"name": &"greenSword",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_kmjxa")
-}],
-"loop": true,
-"name": &"redArmor",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_2bseg")
-}],
-"loop": true,
-"name": &"redPotion",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_74rsf")
-}],
-"loop": true,
-"name": &"redSword",
-"speed": 5.0
-}]
 
 [node name="SellWindow" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_p0yb1")
@@ -113,10 +30,12 @@ sprite_frames = ExtResource("3_pbhjq")
 animation = &"1"
 
 [node name="Bubble" type="AnimatedSprite2D" parent="Buyer"]
-sprite_frames = ExtResource("4_4mi0j")
+sprite_frames = ExtResource("5_lwmp7")
 autoplay = "default"
 frame_progress = 0.928266
 
 [node name="Item" type="AnimatedSprite2D" parent="Buyer/Bubble"]
-sprite_frames = SubResource("SpriteFrames_3llld")
-animation = &"greenSword"
+position = Vector2(375, -401)
+scale = Vector2(0.389286, 0.389286)
+sprite_frames = ExtResource("6_ws62x")
+animation = &"redSword"

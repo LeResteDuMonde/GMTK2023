@@ -1,0 +1,86 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://q13fd4hh1k8u"]
+
+[ext_resource type="Texture2D" uid="uid://bxbbthfjp1r40" path="res://sprite/tableItem/blueArmorTable.PNG" id="1_ywq4a"]
+[ext_resource type="Texture2D" uid="uid://cm55yhi0ta4cg" path="res://sprite/tableItem/bluePotionTable.PNG" id="2_bs801"]
+[ext_resource type="Texture2D" uid="uid://12wolpvdijft" path="res://sprite/tableItem/blueSwordTable.PNG" id="3_v1ru1"]
+[ext_resource type="Texture2D" uid="uid://cay5aipxy58va" path="res://sprite/tableItem/greenArmorTable.PNG" id="4_y0jsa"]
+[ext_resource type="Texture2D" uid="uid://ckgbpjb5tq7p2" path="res://sprite/tableItem/greenPotionTable.PNG" id="5_ikntw"]
+[ext_resource type="Texture2D" uid="uid://pyd2w5sgx5sv" path="res://sprite/tableItem/greenSwordTable.PNG" id="6_yfa12"]
+[ext_resource type="Texture2D" uid="uid://bn5m1stkt0i2s" path="res://sprite/tableItem/redArmorTable.PNG" id="7_8fnbr"]
+[ext_resource type="Texture2D" uid="uid://ccet27w5280s2" path="res://sprite/tableItem/redPotionTable.PNG" id="8_x077o"]
+[ext_resource type="Texture2D" uid="uid://c5ddjym8udg0" path="res://sprite/tableItem/redSwordTable.PNG" id="9_p0u7c"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ywq4a")
+}],
+"loop": true,
+"name": &"blueArmor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bs801")
+}],
+"loop": true,
+"name": &"bluePotion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v1ru1")
+}],
+"loop": true,
+"name": &"blueSword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y0jsa")
+}],
+"loop": true,
+"name": &"greenArmor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ikntw")
+}],
+"loop": true,
+"name": &"greenPotion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yfa12")
+}],
+"loop": true,
+"name": &"greenSword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8fnbr")
+}],
+"loop": true,
+"name": &"redArmor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x077o")
+}],
+"loop": true,
+"name": &"redPotion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_p0u7c")
+}],
+"loop": true,
+"name": &"redSword",
+"speed": 5.0
+}]

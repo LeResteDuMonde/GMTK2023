@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwyf5o4e6nyj6"]
+[gd_scene load_steps=7 format=3 uid="uid://bwyf5o4e6nyj6"]
 
 [ext_resource type="Script" path="res://script/item.gd" id="1_s0rd8"]
 [ext_resource type="Texture2D" uid="uid://b1jjdlnytoov" path="res://sprite/items/tetromino.png" id="2_xfvpg"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="3_6pepf"]
+[ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="4_vjk6q"]
+[ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="5_48r82"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1np5q"]
 shader = ExtResource("3_6pepf")
@@ -21,13 +23,27 @@ scale = Vector2(2, 2)
 polygon = PackedVector2Array(94, -63, 93, -2, 33, -2, 33, 63, -32, 63, -34, -1, -94, -1, -94, -63)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 texture = ExtResource("2_xfvpg")
 
 [node name="Highlight" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_1np5q")
 scale = Vector2(2, 2)
 texture = ExtResource("2_xfvpg")
+
+[node name="TableSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+sprite_frames = ExtResource("4_vjk6q")
+animation = &"blueArmor"
+
+[node name="TableSpriteHighlight" type="AnimatedSprite2D" parent="."]
+visible = false
+material = ExtResource("5_48r82")
+position = Vector2(2, 0)
+sprite_frames = ExtResource("4_vjk6q")
+animation = &"blueArmor"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

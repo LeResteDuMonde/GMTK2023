@@ -19,8 +19,8 @@ func newBuyer():
 	var itemSprite
 	
 	match size:
-		1: itemSprite = "blue"
-		2: itemSprite = "green"
+		1: itemSprite = "green"
+		2: itemSprite = "blue"
 		3: itemSprite = "red"
 	
 	match type:

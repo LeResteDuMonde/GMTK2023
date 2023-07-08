@@ -25,6 +25,7 @@ TimerManager="*res://script/manager/timerManager.gd"
 TranslationManager="*res://script/manager/translationManager.gd"
 MoneyManager="*res://script/manager/moneyManager.gd"
 HealthManager="*res://script/manager/healthManager.gd"
+CursorManager="*res://cursorManager.gd"
 
 [display]
 

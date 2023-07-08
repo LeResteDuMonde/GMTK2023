@@ -7,16 +7,21 @@ extends Node2D
 
 @onready var highlight = get_node("Highlight")
 @onready var area = get_node("Area2D")
+@onready var tableSprite = $TableSprite
+@onready var tableSpriteHighLight = $TableSpriteHighlight
+@onready var sprite = $Sprite2D
 
 var entered = false
 var dragging = false
+
+var onTable = true
 
 var red_color = Color(1.0, 0.0, 0.0)
 var green_color = Color(0.0, 1.0, 0.0)
 var white_color = Color(1.0, 1.0, 1.0)
 
-var size = 1
-var type = 1
+@export var size = 1
+@export var type = 1
 
 func getPrice():
 	match size:
@@ -26,6 +31,20 @@ func getPrice():
 
 func _ready():
 	highlight.material = highlight.material.duplicate()
+	
+	var itemSprite
+	
+	match size:
+		1: itemSprite = "green"
+		2: itemSprite = "blue"
+		3: itemSprite = "red"
+	
+	match type:
+		1: itemSprite += "Armor"
+		2: itemSprite += "Potion"
+		3: itemSprite += "Sword"
+	
+	tableSprite.play(itemSprite)
 	
 func _process(delta):
 	var shader_color
@@ -43,11 +62,15 @@ func _process(delta):
 func _on_mouse_entered():
 	entered = true
 	if highlight != null:
-		highlight.visible = true
-		
+		CursorManager.play("open")
+		if(onTable): tableSpriteHighLight.visible = true
+		else: highlight.visible = true
+			
 func _on_mouse_exited():
+	CursorManager.play("default")
 	entered = false
 	if highlight != null:
+		tableSpriteHighLight.visible = false
 		highlight.visible = false
 		
 func can_place():
@@ -65,11 +88,16 @@ func take():
 	for area in areas:
 		var parent = area.get_node("../")
 		if parent.name == "BuyTable":
-			pass # TODO
+			parent.take()
 		if parent.name == "SellWindow":
 			pass # TODO
 		if parent.name == "Stock":
 			parent.remove(self)
+	CursorManager.play("hold")
+	tableSprite.visible = false
+	tableSpriteHighLight.visible = false
+	sprite.visible = true
+	onTable = false
 	
 func place():
 	var areas = area.get_overlapping_areas()
