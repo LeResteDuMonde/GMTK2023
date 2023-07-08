@@ -15,6 +15,9 @@ var red_color = Color(1.0, 0.0, 0.0)
 var green_color = Color(0.0, 1.0, 0.0)
 var white_color = Color(1.0, 1.0, 1.0)
 
+func _ready():
+	highlight.material = highlight.material.duplicate()
+	
 func _process(delta):
 	var shader_color
 	if dragging:
@@ -87,3 +90,13 @@ func _unhandled_input(event):
 				dragging = false
 				self.position = releasedpos
 			get_viewport().set_input_as_handled()
+	if event.is_action_released("rotate_left") and dragging:
+		rotation_degrees -= 90
+	if event.is_action_released("rotate_right") and dragging:
+		rotation_degrees += 90
+
+func get_origin():
+	return position + Vector2(origin).rotated(rotation)
+#
+#func _draw():
+#	draw_rect(Rect2(get_origin(), Vector2(5,5)), Color(1,0,0))

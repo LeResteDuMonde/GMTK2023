@@ -18,13 +18,15 @@ func _ready():
 
 ## Calculate the relative position in the grid
 func grid_pos(item):
-	var itemOrigin = item.position + Vector2(item.origin)
+	var itemOrigin = item.get_origin()
 	var relPos = itemOrigin - topLeft;
-	relPos = Vector2(round(relPos.x/cellSize), round(relPos.y/cellSize))
+	relPos = Vector2i(round(relPos.x/cellSize - 0.5), round(relPos.y/cellSize - 0.5))
 	return relPos
 	
-func spaces_are_free(relPos, spaces):
-	for s in spaces:
+func spaces_are_free(relPos, item):
+	for s in item.spaces:
+		s = Vector2i(s.rotated(item.rotation))
+		print(relPos + s)
 		if relPos.x + s.x < 0 || relPos.x + s.x >= width:
 			return false
 		if relPos.y + s.y < 0 || relPos.y + s.y >= height:
@@ -34,20 +36,22 @@ func spaces_are_free(relPos, spaces):
 	return true
 	
 func can_be_placed(item):
-	return spaces_are_free(grid_pos(item), item.spaces)
+	return spaces_are_free(grid_pos(item), item)
 	
 func place(item):
 	var relPos = grid_pos(item)
-	if spaces_are_free(relPos, item.spaces):
+	if spaces_are_free(relPos, item):
 		for s in item.spaces:
+			s = Vector2i(s.rotated(item.rotation))
 			grid[relPos.y + s.y][relPos.x + s.x] = true
 		current_items.append(item)
-		return topLeft - Vector2(item.origin) + Vector2(relPos) * cellSize
+		return topLeft - Vector2(item.origin).rotated(item.rotation) + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
 	return null
 
 func remove(item):
 	if current_items.has(item):
 		var relPos = grid_pos(item)
 		for s in item.spaces:
+			s = Vector2i(s.rotated(item.rotation))
 			grid[relPos.y + s.y][relPos.x + s.x] = false
 		current_items.erase(item)

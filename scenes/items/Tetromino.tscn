@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1jjdlnytoov" path="res://sprite/items/tetromino.png" id="2_xfvpg"]
 [ext_resource type="Shader" path="res://shader/outline.gdshader" id="3_6pepf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nc4a1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1np5q"]
 shader = ExtResource("3_6pepf")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 2.0
@@ -12,7 +12,7 @@ shader_parameter/line_thickness = 2.0
 [node name="Tetromino" type="Node2D"]
 script = ExtResource("1_s0rd8")
 spaces = Array[Vector2]([Vector2(0, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(0, 1)])
-origin = Vector2i(-32, -64)
+origin = Vector2i(0, -32)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -23,7 +23,7 @@ polygon = PackedVector2Array(94, -63, 93, -2, 33, -2, 33, 63, -32, 63, -34, -1, 
 texture = ExtResource("2_xfvpg")
 
 [node name="Highlight" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_nc4a1")
+material = SubResource("ShaderMaterial_1np5q")
 texture = ExtResource("2_xfvpg")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]

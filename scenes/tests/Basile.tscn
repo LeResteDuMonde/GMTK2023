@@ -28,7 +28,7 @@ position = Vector2(576, 402)
 position = Vector2(189, 113)
 
 [node name="Item2" parent="Items" instance=ExtResource("1_sebe6")]
-position = Vector2(189, 113)
+position = Vector2(191, 396)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
