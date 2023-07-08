@@ -130,8 +130,8 @@ func place():
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not CursorManager.dragging and entered:
-			take()
 			dragging = true	
+			take()
 			move_to_front()
 			get_viewport().set_input_as_handled()
 		elif dragging:
@@ -140,7 +140,7 @@ func _unhandled_input(event):
 				place()
 			else:
 				AudioManager.play("sounds/cantPlace")
-				get_viewport().set_input_as_handled()
+			get_viewport().set_input_as_handled()
 	if event.is_action_released("rotate_left") and dragging:
 		AudioManager.play("sounds/rotate")
 		rotation_degrees -= 90

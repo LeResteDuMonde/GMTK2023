@@ -3,13 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dnyygq0w78u2k" path="res://scenes/world/Stock.tscn" id="2_o5vl4"]
 [ext_resource type="PackedScene" uid="uid://0rnp00r0r4kl" path="res://scenes/world/BuyTable.tscn" id="5_4kxcr"]
 [ext_resource type="PackedScene" uid="uid://dglpyi4fks4or" path="res://scenes/Money.tscn" id="5_opr01"]
+[ext_resource type="Texture2D" uid="uid://bhqnq532yguks" path="res://sprite/background.png" id="8_35pkw"]
 [ext_resource type="PackedScene" uid="uid://15l7vkosvgpf" path="res://scenes/world/Trash.tscn" id="8_ffnxa"]
 [ext_resource type="SpriteFrames" uid="uid://b2veilktbg6a6" path="res://animations/life.tres" id="8_kclwe"]
 [ext_resource type="PackedScene" uid="uid://cjr1efxrsl1jv" path="res://scenes/world/SellWindow.tscn" id="8_kcm3d"]
 [ext_resource type="SpriteFrames" uid="uid://chkklkq7ivegg" path="res://animations/menuButton.tres" id="10_cp75w"]
 [ext_resource type="SpriteFrames" uid="uid://kfr6qpmig0th" path="res://animations/restartButton.tres" id="11_8km8j"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_m4uqa"]
 
 [node name="World" type="Node2D"]
 position = Vector2(960, 540)
@@ -44,7 +43,6 @@ autoplay = "default"
 
 [node name="BackGround" type="Sprite2D" parent="."]
 z_index = -1000
-scale = Vector2(1920, 1080)
-texture = SubResource("CanvasTexture_m4uqa")
+texture = ExtResource("8_35pkw")
 
 [node name="SellWindow" parent="." instance=ExtResource("8_kcm3d")]

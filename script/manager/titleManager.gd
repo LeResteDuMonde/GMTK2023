@@ -19,6 +19,7 @@ func showTitleScreen():
 func showGameOverScreen():
 	print("Show Game Over Screen")
 	gameOverScreen.visible = true
+	gameOverScreen.get_node("Label").text = str(MoneyManager.money)
 	
 #func showLevelSelect():
 #	levelSelectScreen.visible = true

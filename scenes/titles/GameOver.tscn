@@ -1,10 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6xjsb1wi8v05"]
+[gd_scene load_steps=5 format=3 uid="uid://b6xjsb1wi8v05"]
 
-[ext_resource type="Texture2D" uid="uid://dmcgxagohosgg" path="res://sprite/gameOver.png" id="1_5dogp"]
+[ext_resource type="Texture2D" uid="uid://bhqnq532yguks" path="res://sprite/background.png" id="1_pww2j"]
+[ext_resource type="SpriteFrames" uid="uid://cuibg6b6k7der" path="res://animations/scoreboard.tres" id="2_hssjm"]
+[ext_resource type="FontFile" uid="uid://bfk6rsuphhq0g" path="res://font/Comic Sans MS.ttf" id="3_fiu3b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a63y8"]
+font = ExtResource("3_fiu3b")
+font_size = 100
 
 [node name="GameOver" type="Node2D"]
 
 [node name="BackGround" type="Sprite2D" parent="."]
 z_index = -1
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_5dogp")
+texture = ExtResource("1_pww2j")
+
+[node name="ScoreBoard" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_hssjm")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -98.0
+offset_top = 139.0
+offset_right = 205.0
+offset_bottom = 332.0
+text = "999"
+label_settings = SubResource("LabelSettings_a63y8")
