@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b866krg6stdqx"]
+[gd_scene load_steps=7 format=3 uid="uid://b866krg6stdqx"]
 
 [ext_resource type="PackedScene" uid="uid://cn53fdw3sg7jy" path="res://scenes/World.tscn" id="1_dosi0"]
 [ext_resource type="SpriteFrames" uid="uid://b4xrh6g6r4bmj" path="res://animations/cursor.tres" id="2_hyfxq"]
 [ext_resource type="Script" path="res://script/cursor.gd" id="3_7116h"]
 [ext_resource type="PackedScene" uid="uid://dv1k6wyf50ovt" path="res://scenes/titles/Title.tscn" id="4_vof0w"]
 [ext_resource type="PackedScene" uid="uid://b6xjsb1wi8v05" path="res://scenes/titles/GameOver.tscn" id="5_6y8e3"]
+[ext_resource type="AudioStream" uid="uid://bg5naph8o8fup" path="res://audio/musics/gmtk2023Ost1.wav" id="6_aejsh"]
 
 [node name="Main" type="Node2D"]
 
@@ -27,3 +28,6 @@ position = Vector2(960, 540)
 visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_aejsh")
+autoplay = true
+bus = &"Music"
