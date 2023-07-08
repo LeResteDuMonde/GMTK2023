@@ -1,5 +1,6 @@
 extends Node
 
+@onready var buyTable = get_node("../BuyTable")
 @onready var buyer = $Buyer
 @onready var item = $Buyer/Bubble/Item
 
@@ -8,13 +9,24 @@ var enabled = false
 var size
 var type
 
+func pickInTable(r):
+	var c = 0
+	for i in range(0,3):
+		for j in range(0,3):
+			c = c + buyTable.receivedItems[i][j]
+			if c >= r:
+				size = i + 1
+				type = j + 1
+				return
+
 func newBuyer():
 	if(enabled): disatifyBuyer()
 	var buyerSprite = randi_range(1,5)
 	buyer.play(str(buyerSprite))
 	
-	size = randi_range(1,3)
-	type = randi_range(1,3)
+	var totalReceived = buyTable.count_received()
+	var r = randi_range(0,totalReceived-1)
+	pickInTable(r)
 	
 	var itemSprite
 	

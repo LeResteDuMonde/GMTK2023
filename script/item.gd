@@ -78,6 +78,7 @@ func _on_mouse_exited():
 		highlight.visible = false
 		
 func can_place():
+	if not is_instance_valid(area): return
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
