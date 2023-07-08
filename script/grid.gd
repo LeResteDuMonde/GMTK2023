@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var cellSize = 64
+@export var cellSize = 128
 @export var width = 7
 @export var height = 5
 
@@ -26,7 +26,6 @@ func grid_pos(item):
 func spaces_are_free(relPos, item):
 	for s in item.spaces:
 		s = Vector2i(s.rotated(item.rotation))
-		print(relPos + s)
 		if relPos.x + s.x < 0 || relPos.x + s.x >= width:
 			return false
 		if relPos.y + s.y < 0 || relPos.y + s.y >= height:

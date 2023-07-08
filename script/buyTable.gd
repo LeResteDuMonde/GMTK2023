@@ -7,10 +7,10 @@ func addItem():
 #	print("newItem")
 	var item = item_r.instantiate()
 	item.position = position
-	GameManager.main.get_node("Items").add_child(item)
+	GameManager.main.get_node("World/Items").add_child(item)
 	
 	if(currentItem != null): 
 		if(currentItem.position == position):
-			GameManager.main.get_node("Trash").trash(currentItem)
+			GameManager.main.get_node("World/Trash").trash(currentItem)
 		
 	currentItem = item

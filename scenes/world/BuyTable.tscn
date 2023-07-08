@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0rnp00r0r4kl"]
+[gd_scene load_steps=5 format=3 uid="uid://0rnp00r0r4kl"]
 
-[ext_resource type="Texture2D" uid="uid://dtmqm8p85jpa3" path="res://sprite/buyTable.png" id="1_lg2u5"]
 [ext_resource type="Script" path="res://script/buyTable.gd" id="1_wcmg1"]
+[ext_resource type="SpriteFrames" path="res://animations/buyTable.tres" id="3_ncs8d"]
+[ext_resource type="PackedScene" path="res://scenes/TimerBar.tscn" id="4_jguup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbip"]
 size = Vector2(501, 300)
@@ -9,11 +10,18 @@ size = Vector2(501, 300)
 [node name="BuyTable" type="Node2D"]
 script = ExtResource("1_wcmg1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lg2u5")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_bgbip")
+
+[node name="Table" type="AnimatedSprite2D" parent="."]
+position = Vector2(657, 377)
+sprite_frames = ExtResource("3_ncs8d")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0259291
+
+[node name="TimerBar" parent="." instance=ExtResource("4_jguup")]
+position = Vector2(-261, 203)

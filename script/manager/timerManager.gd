@@ -22,7 +22,7 @@ func _process(delta):
 		
 	if(sellerTimer <= 0):
 		sellerTimer = sellerTime
-		GameManager.main.get_node("BuyTable").addItem()
+		GameManager.main.get_node("World/BuyTable").addItem()
 	
 	buyerTimer -= delta
 	sellerTimer -= delta
@@ -39,8 +39,8 @@ func start():
 	buyerTimer = buyerTime
 	sellerTimer = sellerTime
 	
-	buyerTimerBar = GameManager.main.get_node("ShopWindow/TimerBar")
-	sellerTimerBar = GameManager.main.get_node("Table/TimerBar")
+	buyerTimerBar = GameManager.main.get_node("World/ShopWindow/TimerBar")
+	sellerTimerBar = GameManager.main.get_node("World/BuyTable/TimerBar")
 	
 	running = true
 	

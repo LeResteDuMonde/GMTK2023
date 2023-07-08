@@ -12,18 +12,21 @@ shader_parameter/line_thickness = 2.0
 [node name="Tetromino" type="Node2D"]
 script = ExtResource("1_s0rd8")
 spaces = Array[Vector2]([Vector2(0, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(0, 1)])
-origin = Vector2i(0, -32)
+origin = Vector2i(0, -64)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(94, -63, 93, -2, 33, -2, 33, 63, -32, 63, -34, -1, -94, -1, -94, -63)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_xfvpg")
 
 [node name="Highlight" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_1np5q")
+scale = Vector2(2, 2)
 texture = ExtResource("2_xfvpg")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]

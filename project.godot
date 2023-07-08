@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="GMTK2023"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,9 +26,10 @@ TranslationManager="*res://script/manager/translationManager.gd"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=540
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/resizable=false
+window/stretch/scale=0.5
 
 [editor]
 

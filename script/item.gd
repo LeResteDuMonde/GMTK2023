@@ -22,7 +22,7 @@ func _process(delta):
 	var shader_color
 	if dragging:
 		var mousepos = get_viewport().get_mouse_position()
-		self.position = Vector2(mousepos.x, mousepos.y)
+		self.global_position = Vector2(mousepos.x, mousepos.y)
 		if can_place():
 			shader_color = green_color
 		else:
