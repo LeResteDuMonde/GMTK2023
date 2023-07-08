@@ -14,7 +14,7 @@ func pickInTable(r):
 	for i in range(0,3):
 		for j in range(0,3):
 			c = c + buyTable.receivedItems[i][j]
-			if c >= r:
+			if c > r:
 				size = i + 1
 				type = j + 1
 				return

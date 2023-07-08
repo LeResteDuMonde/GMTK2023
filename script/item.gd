@@ -94,7 +94,6 @@ func take():
 	for area in areas:
 		var parent = area.get_node("../")
 		if parent.name == "BuyTable":
-			print("Take from BuyTable")
 			parent.take(self)
 		if parent.name == "Stock":
 			parent.remove(self)
