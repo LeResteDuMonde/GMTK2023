@@ -20,6 +20,7 @@ func unhover():
 		cursor.play("default")
 	
 func take():
+	ShakeManager.shake(1.5,0.25)
 	dragging = true
 	cursor.play("hold")
 	AudioManager.play("sounds/pickUp",3)

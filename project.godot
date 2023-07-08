@@ -27,6 +27,7 @@ MoneyManager="*res://script/manager/moneyManager.gd"
 HealthManager="*res://script/manager/healthManager.gd"
 CursorManager="*res://script/manager/cursorManager.gd"
 TitleManager="*res://script/manager/titleManager.gd"
+ShakeManager="*res://script/manager/shakeManager.gd"
 
 [display]
 

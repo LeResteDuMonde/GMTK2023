@@ -61,5 +61,6 @@ func removeBuyer():
 	buyer.visible = false
 	
 func disatifyBuyer():
+	ShakeManager.shake(3,0.2)
 	AudioManager.play("sounds/disatisfied",3)
 	HealthManager.damage()
