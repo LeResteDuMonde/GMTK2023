@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b866krg6stdqx"]
+[gd_scene load_steps=6 format=3 uid="uid://b866krg6stdqx"]
 
 [ext_resource type="PackedScene" uid="uid://cn53fdw3sg7jy" path="res://scenes/World.tscn" id="1_dosi0"]
 [ext_resource type="SpriteFrames" uid="uid://b4xrh6g6r4bmj" path="res://animations/cursor.tres" id="2_hyfxq"]
 [ext_resource type="Script" path="res://script/cursor.gd" id="3_7116h"]
+[ext_resource type="PackedScene" uid="uid://dv1k6wyf50ovt" path="res://scenes/titles/Title.tscn" id="4_vof0w"]
+[ext_resource type="PackedScene" uid="uid://b6xjsb1wi8v05" path="res://scenes/titles/GameOver.tscn" id="5_6y8e3"]
 
 [node name="Main" type="Node2D"]
 
@@ -14,3 +16,13 @@ script = ExtResource("3_7116h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Titles" type="Node2D" parent="."]
+z_index = 1000
+position = Vector2(960, 540)
+
+[node name="Title" parent="Titles" instance=ExtResource("4_vof0w")]
+scale = Vector2(1, 1)
+
+[node name="GameOver" parent="Titles" instance=ExtResource("5_6y8e3")]
+visible = false

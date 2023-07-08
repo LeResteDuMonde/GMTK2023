@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://0rnp00r0r4kl"]
 
 [ext_resource type="Script" path="res://script/buyTable.gd" id="1_wcmg1"]
-[ext_resource type="SpriteFrames" path="res://animations/buyTable.tres" id="3_ncs8d"]
-[ext_resource type="PackedScene" path="res://scenes/TimerBar.tscn" id="4_jguup"]
+[ext_resource type="SpriteFrames" uid="uid://dcp6448gc4a0d" path="res://animations/buyTable.tres" id="3_ncs8d"]
+[ext_resource type="PackedScene" uid="uid://2u77he1rl5u5" path="res://scenes/TimerBar.tscn" id="4_jguup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbip"]
 size = Vector2(501, 300)

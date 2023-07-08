@@ -9,13 +9,16 @@ extends Node2D
 var grid = []
 var current_items = []
 
-func _ready():
+func reset():
 	grid.resize(height)
 	for i in range(height):
 		grid[i] = []
 		grid[i].resize(width)
 		grid[i].fill(false)
-
+	current_items = []
+		
+func _ready():
+	reset()
 
 ## Calculate the relative position in the grid
 func grid_pos(item):
@@ -63,3 +66,4 @@ func remove(item):
 		for s in item.get_rotated_cells():
 			grid[relPos.y + s.y][relPos.x + s.x] = false
 		current_items.erase(item)
+

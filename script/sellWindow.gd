@@ -41,8 +41,11 @@ func sell(item):
 		disatifyBuyer()
 	item.queue_free()
 	
-func disatifyBuyer():
+func removeBuyer():
 	enabled = false
-	HealthManager.damage()
 	buyer.visible = false
+	
+func disatifyBuyer():
+	HealthManager.damage()
+	removeBuyer()
 	

@@ -4,9 +4,13 @@ var currentItem
 #var item_r = preload("res://scenes/items/Tetromino.tscn")
 var items = []
 
+func reset():
+	currentItem = null
+	
 func _ready():
 	loadItems("res://scenes/items/")
-	print(items)
+#	print(items)
+	reset()
 	
 func loadItems(path):
 	var dir = DirAccess.open(path)

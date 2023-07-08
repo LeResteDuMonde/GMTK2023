@@ -1,11 +1,14 @@
 extends Node
 
-var money = 100
-var display
+var money
+@onready var display = GameManager.main.get_node("World/Money/Label")
 
-func _ready():
-	display = GameManager.main.get_node("World/Money/Label")
+func reset():
+	money = 100
 	updateDisplay()
+	
+func _ready():
+	reset()
 
 func pay(count):
 	var paying = money > count

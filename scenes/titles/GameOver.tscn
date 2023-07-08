@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6xjsb1wi8v05"]
+
+[ext_resource type="Texture2D" uid="uid://dmcgxagohosgg" path="res://sprite/gameOver.png" id="1_5dogp"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="BackGround" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_5dogp")

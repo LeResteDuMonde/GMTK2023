@@ -1,15 +1,20 @@
 extends Node
 
-var health = 4
-var display
+var health
+@onready var display = GameManager.main.get_node("World/Health")
+
+func reset():
+	health = 4
+	updateDisplay()
 
 func _ready():
-	display = GameManager.main.get_node("World/Health")
-	udpateDisplay()
+	reset()
 	
 func damage():
 	health -= 1
-	if(health > 0): udpateDisplay()
+	if(health > 0): updateDisplay()
+	else: # Game Over :(
+		GameManager.gameOver()
 	
-func udpateDisplay():
+func updateDisplay():
 	display.play(str(health))
