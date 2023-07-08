@@ -9,6 +9,8 @@ size = Vector2(993, 622)
 [node name="Stock" type="Node2D"]
 script = ExtResource("1_c46gp")
 
+[node name="Highlights" type="Node2D" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_kdp5c")
 

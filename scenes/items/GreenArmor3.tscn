@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2nlyyp87pr50"]
+
+[ext_resource type="Script" path="res://script/item.gd" id="1_k7ntg"]
+[ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="2_8x756"]
+[ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="3_eo7ky"]
+[ext_resource type="Texture2D" uid="uid://cjkx7upoasi1i" path="res://sprite/items/itemGreenArmor3.PNG" id="4_u6r4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahiyb"]
+size = Vector2(196, 97)
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_k7ntg")
+cells = Array[Vector2]([Vector2(0, 0), Vector2(1, 0)])
+offset = Vector2(-0.5, 0)
+
+[node name="TableSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_8x756")
+animation = &"greenArmor"
+
+[node name="TableSpriteHighlight" type="AnimatedSprite2D" parent="."]
+visible = false
+material = ExtResource("3_eo7ky")
+position = Vector2(2, 0)
+sprite_frames = ExtResource("2_8x756")
+animation = &"greenArmor"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_ahiyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_u6r4x")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("3_eo7ky")
+texture = ExtResource("4_u6r4x")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
