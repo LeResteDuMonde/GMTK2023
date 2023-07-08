@@ -22,6 +22,7 @@ func unhover():
 func take():
 	dragging = true
 	cursor.play("hold")
+	AudioManager.play("sounds/pickUp",3)
 	
 func release():
 	dragging = false
