@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://8ic5dsbn12cg"]
+
+[ext_resource type="Script" path="res://script/item.gd" id="1_np0ms"]
+[ext_resource type="Texture2D" uid="uid://cj7bwnd2n7ey" path="res://sprite/items/itemGreenArmor2.PNG" id="2_u5q3u"]
+[ext_resource type="Shader" path="res://shader/outline.gdshader" id="3_hk5rh"]
+[ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="4_oedjo"]
+[ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="5_7iyea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upido"]
+size = Vector2(216, 210)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1np5q"]
+shader = ExtResource("3_hk5rh")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 2.0
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_np0ms")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_upido")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u5q3u")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_1np5q")
+texture = ExtResource("2_u5q3u")
+
+[node name="TableSpriteHighlight" type="AnimatedSprite2D" parent="."]
+visible = false
+material = ExtResource("4_oedjo")
+position = Vector2(2, 0)
+sprite_frames = ExtResource("5_7iyea")
+animation = &"blueArmor"
+
+[node name="TableSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+sprite_frames = ExtResource("5_7iyea")
+animation = &"greenArmor"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

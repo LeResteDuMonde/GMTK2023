@@ -1,9 +1,10 @@
 extends Node2D
 
-@export var spaces: Array[Vector2] = []
+@export var cellSize = 128
+@export var cells: Array[Vector2] = []
 
 # Offset of the top left corner of square (0,0)
-@export var origin: Vector2i = Vector2i(0,0)
+# @export var origin: Vector2i = Vector2i(0,0)
 
 @onready var highlight = get_node("Highlight")
 @onready var area = get_node("Area2D")
@@ -30,6 +31,7 @@ func getPrice():
 		3: return 25
 
 func _ready():
+	get_node("Sprite2D").visible = false
 	highlight.material = highlight.material.duplicate()
 	
 	var itemSprite
@@ -77,7 +79,7 @@ func can_place():
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
-		if parent.name == "BuyTable" || (parent.name == "SellWindow" && parent.enabled) || parent.name == "Trash":
+		if (parent.name == "SellWindow" && parent.enabled) || parent.name == "Trash":
 			return true
 		if parent.name == "Stock":
 			return parent.can_be_placed(self)
@@ -97,14 +99,15 @@ func take():
 	tableSprite.visible = false
 	tableSpriteHighLight.visible = false
 	sprite.visible = true
+	highlight.visible = true
 	onTable = false
 	
 func place():
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
-		if parent.name == "BuyTable":
-			return parent.position
+		#if parent.name == "BuyTable":
+		#	return parent.position
 		if parent.name == "SellWindow" && parent.enabled:
 			parent.sell(self)
 			return parent.position
@@ -133,8 +136,15 @@ func _unhandled_input(event):
 	if event.is_action_released("rotate_right") and dragging:
 		rotation_degrees += 90
 
-func get_origin():
-	return position + Vector2(origin).rotated(rotation)
+var offset = Vector2(-.5,-.5)
+	
+# Get cells after rotate
+func get_rotated_cells():
+	return cells.map(func(v):
+		v = (v + offset).rotated(rotation) - offset
+		return Vector2i(round(v.x), round(v.y)))
+#func get_origin():
+#	return position + Vector2(origin).rotated(rotation)
 #
 #func _draw():
 #	draw_rect(Rect2(get_origin(), Vector2(5,5)), Color(1,0,0))

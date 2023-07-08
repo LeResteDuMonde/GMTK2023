@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://gikd0iyk3gqe"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bwyf5o4e6nyj6" path="res://scenes/items/Tetromino.tscn" id="1_sebe6"]
+[ext_resource type="PackedScene" uid="uid://bwyf5o4e6nyj6" path="res://scenes/items/GreenArmor1.tscn" id="1_sebe6"]
 [ext_resource type="PackedScene" uid="uid://0rnp00r0r4kl" path="res://scenes/world/BuyTable.tscn" id="2_tp3ta"]
 [ext_resource type="PackedScene" uid="uid://15l7vkosvgpf" path="res://scenes/world/Trash.tscn" id="3_1d1la"]
 [ext_resource type="PackedScene" uid="uid://dnyygq0w78u2k" path="res://scenes/world/Stock.tscn" id="4_3blo4"]

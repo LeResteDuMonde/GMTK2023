@@ -1,7 +1,7 @@
 extends Node2D
 
 var currentItem
-var item_r = preload("res://scenes/items/Tetromino.tscn")
+#var item_r = preload("res://scenes/items/Tetromino.tscn")
 var items = []
 
 func _ready():

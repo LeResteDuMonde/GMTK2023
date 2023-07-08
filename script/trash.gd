@@ -4,7 +4,7 @@ extends Node2D
 
 func trash(item):
 	sprite.play("open")
-	item.queue_free()
+	item.call_deferred("free")
 
 func throw(item):
 	await TranslationManager.translate(item,position,0.5)

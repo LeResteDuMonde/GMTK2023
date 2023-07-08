@@ -16,41 +16,50 @@ func _ready():
 		grid[i].resize(width)
 		grid[i].fill(false)
 
+
 ## Calculate the relative position in the grid
 func grid_pos(item):
-	var itemOrigin = item.get_origin()
-	var relPos = itemOrigin - topLeft;
-	relPos = Vector2i(round(relPos.x/cellSize - 0.5), round(relPos.y/cellSize - 0.5))
+	var offset = item.offset * cellSize
+	var relPos = item.position - topLeft + offset
+	relPos = Vector2i(round(relPos.x/cellSize + item.offset.x), round(relPos.y/cellSize + item.offset.y))
 	return relPos
 	
-func spaces_are_free(relPos, item):
-	for s in item.spaces:
-		s = Vector2i(s.rotated(item.rotation))
-		if relPos.x + s.x < 0 || relPos.x + s.x >= width:
+func cells_are_free(relPos, item):
+	print("cells_are_free")
+	for s in item.get_rotated_cells():
+		var cellPos = Vector2i(relPos) + s
+		print(cellPos)
+		if cellPos.x < 0 || cellPos.x >= width:
+			print("bad x")
 			return false
-		if relPos.y + s.y < 0 || relPos.y + s.y >= height:
+		if cellPos.y < 0 || cellPos.y >= height:
+			print("bad y")
 			return false
-		if grid[relPos.y + s.y][relPos.x + s.x]:
+		if grid[cellPos.y][cellPos.x]:
+			print("busy")
 			return false
+	print("ok")
 	return true
 	
 func can_be_placed(item):
-	return spaces_are_free(grid_pos(item), item)
+	return cells_are_free(grid_pos(item), item)
 	
 func place(item):
 	var relPos = grid_pos(item)
-	if spaces_are_free(relPos, item):
-		for s in item.spaces:
-			s = Vector2i(s.rotated(item.rotation))
-			grid[relPos.y + s.y][relPos.x + s.x] = true
+	var offset = item.offset * cellSize
+	if cells_are_free(relPos, item):
+		#print("place")
+		for s in item.get_rotated_cells():
+			var cellPos = Vector2i(relPos) + s
+			#print(cellPos)	
+			grid[cellPos.y][cellPos.x] = true
 		current_items.append(item)
-		return topLeft - Vector2(item.origin).rotated(item.rotation) + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
+		return topLeft - offset + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
 	return null
 
 func remove(item):
 	if current_items.has(item):
 		var relPos = grid_pos(item)
-		for s in item.spaces:
-			s = Vector2i(s.rotated(item.rotation))
+		for s in item.get_rotated_cells():
 			grid[relPos.y + s.y][relPos.x + s.x] = false
 		current_items.erase(item)
