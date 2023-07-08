@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dshlqfchnwsr8"]
+
+[ext_resource type="Texture2D" uid="uid://uvh3karxvm1p" path="res://sprite/money/moneyBag1.PNG" id="1_d5bn0"]
+[ext_resource type="Texture2D" uid="uid://cxy1rgu0b6qod" path="res://sprite/money/moneybag2.PNG" id="2_j5rgx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d5bn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j5rgx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

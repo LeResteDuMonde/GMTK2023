@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://kfr6qpmig0th"]
+
+[ext_resource type="Texture2D" uid="uid://s67kniniuv3f" path="res://sprite/buttons/restart.PNG" id="1_rd3x4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rd3x4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://2u77he1rl5u5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_aap8r"]
+
+[node name="TimerBar" type="Node2D"]
+position = Vector2(273, 69)
+
+[node name="TimerSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.231373, 0.172549, 1)
+z_index = -10
+position = Vector2(305, 0)
+scale = Vector2(610, 60)
+texture = SubResource("CanvasTexture_aap8r")

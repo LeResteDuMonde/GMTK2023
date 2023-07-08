@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b2veilktbg6a6"]
+
+[ext_resource type="Texture2D" uid="uid://bx7vu3wnual8g" path="res://sprite/life/heart1.PNG" id="1_odof3"]
+[ext_resource type="Texture2D" uid="uid://refbv740fb3x" path="res://sprite/life/heart2.PNG" id="2_nc7xm"]
+[ext_resource type="Texture2D" uid="uid://c8v3nfeij05bp" path="res://sprite/life/heart3.PNG" id="3_f78sw"]
+[ext_resource type="Texture2D" uid="uid://crsbnc2fmx5dx" path="res://sprite/life/heart4.PNG" id="4_k2ofu"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_odof3")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nc7xm")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f78sw")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k2ofu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
