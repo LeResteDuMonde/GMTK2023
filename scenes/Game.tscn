@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1582oacrbfs5"]
+[gd_scene load_steps=10 format=3 uid="uid://b1582oacrbfs5"]
 
-[ext_resource type="SpriteFrames" uid="uid://bxapr6kdilqe4" path="res://animations/shopWindow.tres" id="1_is8do"]
-[ext_resource type="PackedScene" path="res://scenes/TimerBar.tscn" id="2_1a04f"]
 [ext_resource type="PackedScene" uid="uid://dnyygq0w78u2k" path="res://scenes/world/Stock.tscn" id="2_o5vl4"]
 [ext_resource type="PackedScene" uid="uid://0rnp00r0r4kl" path="res://scenes/world/BuyTable.tscn" id="5_4kxcr"]
+[ext_resource type="PackedScene" uid="uid://dglpyi4fks4or" path="res://scenes/Money.tscn" id="5_opr01"]
 [ext_resource type="PackedScene" uid="uid://15l7vkosvgpf" path="res://scenes/world/Trash.tscn" id="8_ffnxa"]
-[ext_resource type="SpriteFrames" path="res://animations/life.tres" id="8_kclwe"]
-[ext_resource type="SpriteFrames" path="res://animations/moneyBag.tres" id="9_2gajj"]
-[ext_resource type="SpriteFrames" path="res://animations/menuButton.tres" id="10_cp75w"]
-[ext_resource type="SpriteFrames" path="res://animations/restartButton.tres" id="11_8km8j"]
+[ext_resource type="SpriteFrames" uid="uid://b2veilktbg6a6" path="res://animations/life.tres" id="8_kclwe"]
+[ext_resource type="PackedScene" uid="uid://cjr1efxrsl1jv" path="res://scenes/world/SellWindow.tscn" id="8_kcm3d"]
+[ext_resource type="SpriteFrames" uid="uid://chkklkq7ivegg" path="res://animations/menuButton.tres" id="10_cp75w"]
+[ext_resource type="SpriteFrames" uid="uid://kfr6qpmig0th" path="res://animations/restartButton.tres" id="11_8km8j"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m4uqa"]
 
@@ -32,14 +31,11 @@ position = Vector2(-660, -381)
 [node name="Trash" parent="World" instance=ExtResource("8_ffnxa")]
 position = Vector2(-107, -385)
 
-[node name="Life" type="AnimatedSprite2D" parent="World"]
+[node name="Health" type="AnimatedSprite2D" parent="World"]
 sprite_frames = ExtResource("8_kclwe")
-animation = &"1"
+animation = &"4"
 
-[node name="Money" type="AnimatedSprite2D" parent="World"]
-sprite_frames = ExtResource("9_2gajj")
-autoplay = "default"
-frame_progress = 0.930952
+[node name="Money" parent="World" instance=ExtResource("5_opr01")]
 
 [node name="MenuButton" type="AnimatedSprite2D" parent="World"]
 visible = false
@@ -56,9 +52,4 @@ z_index = -1000
 scale = Vector2(1920, 1080)
 texture = SubResource("CanvasTexture_m4uqa")
 
-[node name="ShopWindow" type="AnimatedSprite2D" parent="World"]
-sprite_frames = ExtResource("1_is8do")
-autoplay = "default"
-frame_progress = 0.607861
-
-[node name="TimerBar" parent="World/ShopWindow" instance=ExtResource("2_1a04f")]
+[node name="SellWindow" parent="World" instance=ExtResource("8_kcm3d")]

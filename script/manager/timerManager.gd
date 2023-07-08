@@ -8,8 +8,8 @@ var sellerTime = 2
 var buyerTimerBar
 var sellerTimerBar
 
-const BUYER_TIME_DEFAULT = 20
-const BUYER_TIME_MIN = 5
+const BUYER_TIME_DEFAULT = 6
+const BUYER_TIME_MIN = 3
 
 var running = false
 
@@ -18,7 +18,7 @@ func _process(delta):
 	
 	if(buyerTimer <= 0):
 		buyerTimer = buyerTime
-		# TODO new buyer
+		GameManager.main.get_node("World/SellWindow").newBuyer()
 		
 	if(sellerTimer <= 0):
 		sellerTimer = sellerTime
@@ -39,7 +39,7 @@ func start():
 	buyerTimer = buyerTime
 	sellerTimer = sellerTime
 	
-	buyerTimerBar = GameManager.main.get_node("World/ShopWindow/TimerBar")
+	buyerTimerBar = GameManager.main.get_node("World/SellWindow/TimerBar")
 	sellerTimerBar = GameManager.main.get_node("World/BuyTable/TimerBar")
 	
 	running = true

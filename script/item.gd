@@ -15,6 +15,15 @@ var red_color = Color(1.0, 0.0, 0.0)
 var green_color = Color(0.0, 1.0, 0.0)
 var white_color = Color(1.0, 1.0, 1.0)
 
+var size = 1
+var type = 1
+
+func getPrice():
+	match size:
+		1: return 10
+		2: return 20
+		3: return 25
+
 func _ready():
 	highlight.material = highlight.material.duplicate()
 	
@@ -45,7 +54,7 @@ func can_place():
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
-		if parent.name == "BuyTable" || parent.name == "SellTable" || parent.name == "Trash":
+		if parent.name == "BuyTable" || (parent.name == "SellWindow" && parent.enabled) || parent.name == "Trash":
 			return true
 		if parent.name == "Stock":
 			return parent.can_be_placed(self)
@@ -57,7 +66,7 @@ func take():
 		var parent = area.get_node("../")
 		if parent.name == "BuyTable":
 			pass # TODO
-		if parent.name == "SellTable":
+		if parent.name == "SellWindow":
 			pass # TODO
 		if parent.name == "Stock":
 			parent.remove(self)
@@ -68,10 +77,11 @@ func place():
 		var parent = area.get_node("../")
 		if parent.name == "BuyTable":
 			return parent.position
-		if parent.name == "SellTable":
+		if parent.name == "SellWindow" && parent.enabled:
+			parent.sell(self)
 			return parent.position
 		if parent.name == "Trash":
-			queue_free()
+			parent.trash(self)
 		if parent.name == "Stock":
 			return parent.place(self)
 	# Otherwise, no !
