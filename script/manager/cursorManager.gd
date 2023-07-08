@@ -8,4 +8,8 @@ func _ready():
 	
 func play(anim):
 	cursor.play(anim)
-	
+
+var dragging = false
+
+func reset():
+	dragging = false

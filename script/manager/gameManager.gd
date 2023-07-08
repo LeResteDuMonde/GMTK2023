@@ -21,6 +21,8 @@ func start():
 	TimerManager.start()
 	
 func stop():
+	# Reset input status
+	CursorManager.reset()
 	# Destroy all items
 	for i in items.get_children():
 		if i: i.call_deferred("free")

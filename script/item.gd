@@ -13,7 +13,6 @@ extends Node2D
 @onready var sprite = $Sprite2D
 
 var entered = false
-var dragging = false
 
 var onTable = true
 
@@ -23,6 +22,8 @@ var white_color = Color(1.0, 1.0, 1.0)
 
 @export var size = 1
 @export var type = 1
+
+var dragging = false
 
 func getPrice():
 	match size:
@@ -120,14 +121,16 @@ func place():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if not dragging and entered:
+		if not CursorManager.dragging and entered:
 			take()
+			CursorManager.dragging = true		
+			dragging = true	
 			move_to_front()
 			get_viewport().set_input_as_handled()
-			dragging = true
 		elif dragging:
 			var releasedpos = place()
 			if releasedpos:
+				CursorManager.dragging = false
 				dragging = false
 				self.position = releasedpos
 			get_viewport().set_input_as_handled()

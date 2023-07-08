@@ -4,7 +4,7 @@ extends Node2D
 
 func trash(item):
 	sprite.play("open")
-	if not item.is_queued_for_deletion():
+	if is_instance_valid(item):
 		item.call_deferred("free")
 
 func throw(item):
