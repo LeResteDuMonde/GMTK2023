@@ -1,43 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://2drqk54i2gra"]
+[gd_scene load_steps=5 format=3 uid="uid://dj3cqrmdn1d6r"]
 
 [ext_resource type="Script" path="res://script/item.gd" id="1_5wq6j"]
 [ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="2_0rosd"]
 [ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="3_sl0w3"]
-[ext_resource type="Texture2D" uid="uid://bfhqpj2j7xqtf" path="res://sprite/items/itemGreenPotion3.PNG" id="4_hctbf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_alm10"]
-size = Vector2(115, 192)
+[ext_resource type="Texture2D" uid="uid://bh3bh3jqv84td" path="res://sprite/items/itemRedArmor2.PNG" id="4_4vmxu"]
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_5wq6j")
-cells = Array[Vector2]([Vector2(0, 0), Vector2(0, 1)])
-type = 2
-offset = Vector2(0, -0.5)
+cells = Array[Vector2]([Vector2(0, -1), Vector2(0, 0), Vector2(1, 0), Vector2(0, 1), Vector2(1, 1), Vector2(0, 2), Vector2(1, 2)])
+size = 3
+offset = Vector2(-0.5, -0.5)
 
 [node name="TableSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_0rosd")
-animation = &"greenPotion"
+animation = &"redArmor"
 
 [node name="TableSpriteHighlight" type="AnimatedSprite2D" parent="."]
 visible = false
 material = ExtResource("3_sl0w3")
 position = Vector2(2, 0)
 sprite_frames = ExtResource("2_0rosd")
-animation = &"greenPotion"
+animation = &"redArmor"
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 4)
-shape = SubResource("RectangleShape2D_alm10")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(8, -6)
+polygon = PackedVector2Array(-138, -236, -25, -241, -4, -161, 125, -150, 138, 216, -148, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_hctbf")
+texture = ExtResource("4_4vmxu")
 
 [node name="Highlight" type="Sprite2D" parent="."]
 visible = false
 material = ExtResource("3_sl0w3")
-texture = ExtResource("4_hctbf")
+texture = ExtResource("4_4vmxu")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
