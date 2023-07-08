@@ -136,15 +136,13 @@ func _unhandled_input(event):
 	if event.is_action_released("rotate_right") and dragging:
 		rotation_degrees += 90
 
-var offset = Vector2(-.5,-.5)
+@export var offset = Vector2(0,0)
 	
 # Get cells after rotate
 func get_rotated_cells():
 	return cells.map(func(v):
-		v = (v + offset).rotated(rotation) - offset
+		v = (v + offset).rotated(rotation) - get_rotated_offset()
 		return Vector2i(round(v.x), round(v.y)))
-#func get_origin():
-#	return position + Vector2(origin).rotated(rotation)
-#
-#func _draw():
-#	draw_rect(Rect2(get_origin(), Vector2(5,5)), Color(1,0,0))
+		
+func get_rotated_offset():
+	return offset.rotated(rotation)

@@ -9,6 +9,7 @@
 script = ExtResource("1_uq60a")
 cells = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(0, 1), Vector2(1, 1)])
 size = 2
+offset = Vector2(-0.5, -0.5)
 
 [node name="TableSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_37p6q")

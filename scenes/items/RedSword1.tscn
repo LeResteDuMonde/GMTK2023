@@ -16,6 +16,7 @@ script = ExtResource("1_q7xfv")
 cells = Array[Vector2]([Vector2(0, 0), Vector2(0, 1), Vector2(-1, 1), Vector2(-1, 2), Vector2(1, 0), Vector2(1, -1), Vector2(2, -1)])
 size = 3
 type = 3
+offset = Vector2(-0.5, -0.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 

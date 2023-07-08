@@ -19,26 +19,26 @@ func _ready():
 
 ## Calculate the relative position in the grid
 func grid_pos(item):
-	var offset = item.offset * cellSize
-	var relPos = item.position - topLeft + offset
-	relPos = Vector2i(round(relPos.x/cellSize + item.offset.x), round(relPos.y/cellSize + item.offset.y))
+	var offset = item.get_rotated_offset()
+	var relPos = item.position - topLeft - Vector2(cellSize/2,cellSize/2)
+	relPos = Vector2i(round(relPos.x/cellSize + offset.x), round(relPos.y/cellSize + offset.y))
 	return relPos
 	
 func cells_are_free(relPos, item):
-	print("cells_are_free")
+	#print("cells_are_free")
 	for s in item.get_rotated_cells():
 		var cellPos = Vector2i(relPos) + s
-		print(cellPos)
+		#print(cellPos)
 		if cellPos.x < 0 || cellPos.x >= width:
-			print("bad x")
+			#print("bad x")
 			return false
 		if cellPos.y < 0 || cellPos.y >= height:
-			print("bad y")
+			#print("bad y")
 			return false
 		if grid[cellPos.y][cellPos.x]:
-			print("busy")
+			#print("busy")
 			return false
-	print("ok")
+	#print("ok")
 	return true
 	
 func can_be_placed(item):
@@ -46,7 +46,7 @@ func can_be_placed(item):
 	
 func place(item):
 	var relPos = grid_pos(item)
-	var offset = item.offset * cellSize
+	var offset = item.get_rotated_offset()
 	if cells_are_free(relPos, item):
 		#print("place")
 		for s in item.get_rotated_cells():
@@ -54,7 +54,7 @@ func place(item):
 			#print(cellPos)	
 			grid[cellPos.y][cellPos.x] = true
 		current_items.append(item)
-		return topLeft - offset + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
+		return topLeft - offset * cellSize + Vector2(relPos) * cellSize + Vector2(cellSize/2,cellSize/2)
 	return null
 
 func remove(item):
