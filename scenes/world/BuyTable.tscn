@@ -1,11 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://0rnp00r0r4kl"]
+[gd_scene load_steps=8 format=3 uid="uid://0rnp00r0r4kl"]
 
 [ext_resource type="Script" path="res://script/buyTable.gd" id="1_wcmg1"]
+[ext_resource type="Texture2D" uid="uid://xoov25lmrqjb" path="res://sprite/timer/tableTimer1.png" id="3_f0uhk"]
 [ext_resource type="SpriteFrames" uid="uid://dcp6448gc4a0d" path="res://animations/buyTable.tres" id="3_ncs8d"]
+[ext_resource type="Texture2D" uid="uid://bmjlkqqys6rr5" path="res://sprite/timer/tableTimer2.png" id="4_1wxj5"]
 [ext_resource type="PackedScene" uid="uid://2u77he1rl5u5" path="res://scenes/TimerBar.tscn" id="4_jguup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgbip"]
 size = Vector2(501, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rv2jr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f0uhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1wxj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BuyTable" type="Node2D"]
 script = ExtResource("1_wcmg1")
@@ -23,5 +39,13 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.0259291
 
-[node name="TimerBar" parent="." instance=ExtResource("4_jguup")]
-position = Vector2(-261, 203)
+[node name="Timer" type="AnimatedSprite2D" parent="."]
+position = Vector2(648, 390)
+sprite_frames = SubResource("SpriteFrames_rv2jr")
+
+[node name="BarScale" type="Node2D" parent="Timer"]
+position = Vector2(-352, -81)
+scale = Vector2(0.57, 0.57)
+
+[node name="TimerBar" parent="Timer/BarScale" instance=ExtResource("4_jguup")]
+position = Vector2(-818, -192)

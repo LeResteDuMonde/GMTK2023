@@ -25,12 +25,12 @@ position = Vector2(-390, 200)
 width = 8
 
 [node name="BuyTable" parent="." instance=ExtResource("5_4kxcr")]
-position = Vector2(-660, -381)
+position = Vector2(-144, -361)
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Trash" parent="." instance=ExtResource("8_ffnxa")]
-position = Vector2(-107, -385)
+position = Vector2(-751, -351)
 
 [node name="MenuButton" type="AnimatedSprite2D" parent="."]
 visible = false

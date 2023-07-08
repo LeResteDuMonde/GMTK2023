@@ -23,10 +23,10 @@ label_settings = SubResource("LabelSettings_cnopt")
 
 [node name="Pay" type="Label" parent="."]
 visible = false
-offset_left = -850.0
-offset_top = -250.0
-offset_right = -680.0
-offset_bottom = -106.0
+offset_left = -640.0
+offset_top = -372.0
+offset_right = -470.0
+offset_bottom = -228.0
 text = "-99"
 label_settings = SubResource("LabelSettings_cnopt")
 horizontal_alignment = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq5j3hw6gig8w"
-path="res://.godot/imported/pnjWizard2.PNG-207f8285a052292b7be58f82862756c9.ctex"
+uid="uid://bmjlkqqys6rr5"
+path="res://.godot/imported/tableTimer2.png-17f8bdeccfe1e08a12755b1782f48ce7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/buyers/pnjWizard2.PNG"
-dest_files=["res://.godot/imported/pnjWizard2.PNG-207f8285a052292b7be58f82862756c9.ctex"]
+source_file="res://sprite/timer/tableTimer2.png"
+dest_files=["res://.godot/imported/tableTimer2.png-17f8bdeccfe1e08a12755b1782f48ce7.ctex"]
 
 [params]
 

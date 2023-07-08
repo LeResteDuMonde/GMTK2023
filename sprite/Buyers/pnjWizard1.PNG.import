@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdfxpyshiudhw"
-path="res://.godot/imported/pnjWizard1.PNG-b2f8adee1b965b8712fcf72633d37071.ctex"
+path="res://.godot/imported/pnjWizard1.PNG-a034fadd0c4123c733f802eb7f3b164e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Buyers/pnjWizard1.PNG"
-dest_files=["res://.godot/imported/pnjWizard1.PNG-b2f8adee1b965b8712fcf72633d37071.ctex"]
+source_file="res://sprite/buyers/pnjWizard1.PNG"
+dest_files=["res://.godot/imported/pnjWizard1.PNG-a034fadd0c4123c733f802eb7f3b164e.ctex"]
 
 [params]
 

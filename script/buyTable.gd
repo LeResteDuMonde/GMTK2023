@@ -45,7 +45,7 @@ func addItem():
 		return
 	AudioManager.play("sounds/buy")
 	
-	item.position = position + Vector2(-500,0)
+	item.position = position + Vector2(0,-500)
 	TranslationManager.translate(item,position,0.5)
 	GameManager.main.get_node("World/Items").add_child(item)
 	

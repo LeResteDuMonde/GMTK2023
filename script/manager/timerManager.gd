@@ -40,7 +40,7 @@ func start():
 	sellerTimer = sellerTime
 	
 	buyerTimerBar = GameManager.main.get_node("World/SellWindow/TimerBar")
-	sellerTimerBar = GameManager.main.get_node("World/BuyTable/TimerBar")
+	sellerTimerBar = GameManager.main.get_node("World/BuyTable/Timer/BarScale/TimerBar")
 	
 	running = true
 	
