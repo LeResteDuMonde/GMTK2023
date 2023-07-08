@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyqc22fq6e3gr"
-path="res://.godot/imported/pnjDwarf2.PNG-c6b4951b22be2c27482425b59071daa8.ctex"
+path="res://.godot/imported/pnjDwarf2.PNG-7977839155314bf10d41137bf87ec655.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/buyers/pnjDwarf2.PNG"
-dest_files=["res://.godot/imported/pnjDwarf2.PNG-c6b4951b22be2c27482425b59071daa8.ctex"]
+source_file="res://sprite/Buyers/pnjDwarf2.PNG"
+dest_files=["res://.godot/imported/pnjDwarf2.PNG-7977839155314bf10d41137bf87ec655.ctex"]
 
 [params]
 
