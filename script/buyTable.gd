@@ -42,6 +42,7 @@ func addItem():
 	GameManager.main.get_node("World/Items").add_child(item)
 	
 	if(currentItem != null): 
+		currentItem.get_node("Area2D").queue_free()
 		GameManager.main.get_node("World/Trash").throw(currentItem)
 		
 	currentItem = item

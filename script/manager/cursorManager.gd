@@ -8,8 +8,28 @@ func _ready():
 	
 func play(anim):
 	cursor.play(anim)
-
+	
 var dragging = false
+	
+func hover():
+	if not dragging:
+		cursor.play("open")
+	
+func unhover():
+	if not dragging:
+		cursor.play("default")
+	
+func take():
+	dragging = true
+	cursor.play("hold")
+	
+func release():
+	dragging = false
+	cursor.play("default")
 
+func release_hover():
+	dragging = false
+	cursor.play("open")
+	
 func reset():
 	dragging = false

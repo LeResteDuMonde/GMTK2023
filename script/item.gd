@@ -65,12 +65,12 @@ func _process(delta):
 func _on_mouse_entered():
 	entered = true
 	if highlight != null:
-		CursorManager.play("open")
+		CursorManager.hover()
 		if(onTable): tableSpriteHighLight.visible = true
 		else: highlight.visible = true
 			
 func _on_mouse_exited():
-	CursorManager.play("default")
+	CursorManager.unhover()
 	entered = false
 	if highlight != null:
 		tableSpriteHighLight.visible = false
@@ -96,7 +96,7 @@ func take():
 			pass # TODO
 		if parent.name == "Stock":
 			parent.remove(self)
-	CursorManager.play("hold")
+	CursorManager.take()
 	tableSprite.visible = false
 	tableSpriteHighLight.visible = false
 	sprite.visible = true
@@ -107,32 +107,28 @@ func place():
 	var areas = area.get_overlapping_areas()
 	for area in areas:
 		var parent = area.get_node("../")
-		#if parent.name == "BuyTable":
-		#	return parent.position
 		if parent.name == "SellWindow" && parent.enabled:
+			CursorManager.release()
 			parent.sell(self)
-			return parent.position
+			position = parent.position
 		if parent.name == "Trash":
+			CursorManager.release()
 			parent.trash(self)
 		if parent.name == "Stock":
-			return parent.place(self)
-	# Otherwise, no !
-	return null
+			CursorManager.release_hover()
+			position = parent.place(self)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not CursorManager.dragging and entered:
 			take()
-			CursorManager.dragging = true		
 			dragging = true	
 			move_to_front()
 			get_viewport().set_input_as_handled()
 		elif dragging:
-			var releasedpos = place()
-			if releasedpos:
-				CursorManager.dragging = false
+			if can_place():
 				dragging = false
-				self.position = releasedpos
+				place()
 			get_viewport().set_input_as_handled()
 	if event.is_action_released("rotate_left") and dragging:
 		rotation_degrees -= 90
