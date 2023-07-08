@@ -1,14 +1,14 @@
 extends Node
 
 var buyerTimer
-var buyerTime = 1
-var sellerTimer
-var sellerTime = 2
+var buyerTime = 10
+var sellerTimer 
+var sellerTime = 15
 
 var buyerTimerBar
 var sellerTimerBar
 
-const BUYER_TIME_DEFAULT = 6
+const BUYER_TIME_DEFAULT = 20
 const BUYER_TIME_MIN = 3
 
 var running = false
