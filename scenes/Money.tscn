@@ -21,16 +21,16 @@ horizontal_alignment = 2
 
 [node name="Pay" type="Label" parent="."]
 visible = false
-offset_left = -572.0
-offset_top = -372.0
-offset_right = -402.0
-offset_bottom = -228.0
+offset_left = -677.0
+offset_top = -338.0
+offset_right = -380.0
+offset_bottom = -194.0
 text = "-99"
 label_settings = ExtResource("2_00jbj")
 horizontal_alignment = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pay"]
-position = Vector2(36, -48)
+position = Vector2(155, -57)
 scale = Vector2(0.533333, 0.533333)
 sprite_frames = ExtResource("1_tewrn")
 
@@ -40,11 +40,11 @@ offset_left = 590.0
 offset_top = 285.0
 offset_right = 897.0
 offset_bottom = 429.0
-text = "+999"
+text = "-999"
 label_settings = ExtResource("2_00jbj")
 horizontal_alignment = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sell"]
-position = Vector2(167, -41)
+position = Vector2(167, -66)
 scale = Vector2(0.533333, 0.533333)
 sprite_frames = ExtResource("1_tewrn")

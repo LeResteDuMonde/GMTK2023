@@ -73,7 +73,7 @@ func _input(event):
 			showTitleScreen()
 			
 	if(event.is_action_pressed("escape")):
-		if titleScreen.visible:
+		if titleScreen.visible and (not GameManager.web):
 			get_tree().quit()
 		else:
 			GameManager.stop()

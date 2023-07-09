@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dv1k6wyf50ovt"]
+[gd_scene load_steps=14 format=3 uid="uid://dv1k6wyf50ovt"]
 
 [ext_resource type="Texture2D" uid="uid://cmx0bq7d16m0k" path="res://sprite/mainMenu.png" id="1_vsjrh"]
 [ext_resource type="Texture2D" uid="uid://codu6yca78t0j" path="res://sprite/playButton/playButton.png" id="2_on70b"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://csp67ycemwqk1" path="res://sprite/credit/creditScreen1.png" id="4_w3p7j"]
 [ext_resource type="Texture2D" uid="uid://1o0u8mbpmgdo" path="res://sprite/credit/creditScreen2.png" id="5_ostjl"]
 [ext_resource type="Texture2D" uid="uid://bhqnq532yguks" path="res://sprite/background.png" id="6_avinm"]
+[ext_resource type="Texture2D" uid="uid://xe6xgryupouj" path="res://sprite/mute/muteButton.png" id="9_8staf"]
+[ext_resource type="Texture2D" uid="uid://cig5idgto2vjx" path="res://sprite/fullscreen/fullscreenButton.png" id="10_u23ho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pind"]
 size = Vector2(433, 188)
@@ -65,6 +67,14 @@ texture = ExtResource("6_avinm")
 [node name="Credit" type="AnimatedSprite2D" parent="CreditButton/CreditBackground"]
 z_index = 100
 sprite_frames = SubResource("SpriteFrames_jlkm6")
+
+[node name="MuteButton" type="Sprite2D" parent="."]
+position = Vector2(-91, 203)
+texture = ExtResource("9_8staf")
+
+[node name="FullscreenButton" type="Sprite2D" parent="."]
+position = Vector2(-91, 333)
+texture = ExtResource("10_u23ho")
 
 [connection signal="mouse_entered" from="PlayButton/Area2D" to="PlayButton" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="PlayButton/Area2D" to="PlayButton" method="_on_area_2d_mouse_exited"]

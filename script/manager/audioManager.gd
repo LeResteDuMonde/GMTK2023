@@ -6,14 +6,20 @@ var music = preload("res://audio/musics/gmtk2023Ost1.wav")
 var musicBus = AudioServer.get_bus_index("Music")
 var musicPitchEffect = AudioServer.get_bus_effect(musicBus, 0)
 
+var muteSprite = preload("res://sprite/mute/muteButton.png")
+var unMuteSprite = preload("res://sprite/mute/unmuteButton.png")
+var muteButton
+
 var volume
 var isMute = false
 
 func _ready():
 	volume = musicPlayer.volume_db
+	muteButton = GameManager.main.get_node("Titles/Title/MuteButton")
 	
 func mute():
 	musicPlayer.volume_db = volume if isMute else -80
+	muteButton.texture = muteSprite if isMute else unMuteSprite
 	isMute = !isMute
 
 func start_game_music():
