@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://64i2tlc60lq4"
-path="res://.godot/imported/title.png-0e3a8af076590123c75c76e2d6b8998d.ctex"
+uid="uid://ctrwihx2jcurm"
+path="res://.godot/imported/creditButton.png-f58a749e3d990b5420e2dfbe42ba5895.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/title.png"
-dest_files=["res://.godot/imported/title.png-0e3a8af076590123c75c76e2d6b8998d.ctex"]
+source_file="res://sprite/creditButton.png"
+dest_files=["res://.godot/imported/creditButton.png-f58a749e3d990b5420e2dfbe42ba5895.ctex"]
 
 [params]
 

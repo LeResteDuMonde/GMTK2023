@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvanah5m77giw"]
 
 [ext_resource type="Script" path="res://script/item.gd" id="1_uq60a"]
-[ext_resource type="Texture2D" uid="uid://lvjavwrgakp2" path="res://sprite/items/itemBlueArmor1.PNG" id="2_xyka7"]
+[ext_resource type="Texture2D" uid="uid://lvjavwrgakp2" path="res://sprite/items/itemBlueArmor1.png" id="2_xyka7"]
 [ext_resource type="Material" uid="uid://dpcsestijkp48" path="res://shader/outline.tres" id="3_qbse2"]
 [ext_resource type="SpriteFrames" uid="uid://q13fd4hh1k8u" path="res://animations/tableItem.tres" id="4_37p6q"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwuf5cb626vo"
-path="res://.godot/imported/HandClick.png-58fb2fd2d20f7ea8a1716622e2aaed0a.ctex"
+uid="uid://dybpiq8otf836"
+path="res://.godot/imported/pnjWizard3.png-4fecef1184ac327e721b10d4c02418b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/cursor/HandClick.png"
-dest_files=["res://.godot/imported/HandClick.png-58fb2fd2d20f7ea8a1716622e2aaed0a.ctex"]
+source_file="res://sprite/buyers/pnjWizard3.png"
+dest_files=["res://.godot/imported/pnjWizard3.png-4fecef1184ac327e721b10d4c02418b1.ctex"]
 
 [params]
 

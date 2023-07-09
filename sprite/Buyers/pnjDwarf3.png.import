@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6iufbe7ywh5j"
-path="res://.godot/imported/trash.png-b8ee23a1b27ba1e22cf842cd7f8c4421.ctex"
+uid="uid://cb1dqtermurlr"
+path="res://.godot/imported/pnjDwarf3.png-63c1dbf94511ef7d660cdb359566c189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/trash.png"
-dest_files=["res://.godot/imported/trash.png-b8ee23a1b27ba1e22cf842cd7f8c4421.ctex"]
+source_file="res://sprite/buyers/pnjDwarf3.png"
+dest_files=["res://.godot/imported/pnjDwarf3.png-63c1dbf94511ef7d660cdb359566c189.ctex"]
 
 [params]
 

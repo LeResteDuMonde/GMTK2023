@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8uwhlispqlnv"
-path="res://.godot/imported/HandHold.png-1628e330d01b3d2e788a85f5adf37073.ctex"
+path="res://.godot/imported/handHold.png-ac06d3bcb3611e379bac652ffc31f4ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/cursor/HandHold.png"
-dest_files=["res://.godot/imported/HandHold.png-1628e330d01b3d2e788a85f5adf37073.ctex"]
+source_file="res://sprite/cursor/handHold.png"
+dest_files=["res://.godot/imported/handHold.png-ac06d3bcb3611e379bac652ffc31f4ad.ctex"]
 
 [params]
 

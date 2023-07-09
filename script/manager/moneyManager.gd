@@ -26,7 +26,7 @@ func pay(count):
 		count = 0
 		payLabel.modulate = Color(255,0,0,1)
 	
-	payLabel.text = "-" + str(count)
+	payLabel.text = "-" + str(int(count))
 	payLabel.position = payLabelPosition
 	moneyAnimation(payLabel)
 	
@@ -41,7 +41,7 @@ func moneyAnimation(label):
 
 func addMoney(count):
 	money += count
-	sellLabel.text = "+" + str(count)
+	sellLabel.text = "+" + str(int(count))
 	sellLabel.position = sellLabelPosition
 	
 	if(count > 0): sellLabel.modulate = Color(0,0,0,1)
@@ -52,4 +52,4 @@ func addMoney(count):
 	
 func updateDisplay():
 #	print("money")
-	display.text = str(money)
+	display.text = str(int(money))

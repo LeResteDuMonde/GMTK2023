@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcj0h804vdffj"]
+
+[ext_resource type="SpriteFrames" uid="uid://b4xrh6g6r4bmj" path="res://animations/cursor.tres" id="1_rxutk"]
+[ext_resource type="Script" path="res://script/cursor.gd" id="2_gds3v"]
+
+[node name="Cursor" type="AnimatedSprite2D"]
+visible = false
+z_index = 4096
+sprite_frames = ExtResource("1_rxutk")
+script = ExtResource("2_gds3v")

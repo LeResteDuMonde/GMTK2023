@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56nlcq63k1ab"
-path="res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"
+uid="uid://dtmqm8p85jpa3"
+path="res://.godot/imported/buyTable.png-2288ff0d881af46dcd498a085d999be5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/cursor/handBack.png"
-dest_files=["res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"]
+source_file="res://sprite/playButton/buyTable.png"
+dest_files=["res://.godot/imported/buyTable.png-2288ff0d881af46dcd498a085d999be5.ctex"]
 
 [params]
 

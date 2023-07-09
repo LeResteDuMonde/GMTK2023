@@ -1,10 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv1k6wyf50ovt"]
+[gd_scene load_steps=12 format=3 uid="uid://dv1k6wyf50ovt"]
 
-[ext_resource type="Texture2D" uid="uid://64i2tlc60lq4" path="res://sprite/title.png" id="1_na58v"]
+[ext_resource type="Texture2D" uid="uid://cmx0bq7d16m0k" path="res://sprite/mainMenu.png" id="1_vsjrh"]
+[ext_resource type="Texture2D" uid="uid://codu6yca78t0j" path="res://sprite/playButton/playButton.png" id="2_on70b"]
+[ext_resource type="Script" path="res://script/playButton.gd" id="3_2yq2l"]
+[ext_resource type="Texture2D" uid="uid://ctrwihx2jcurm" path="res://sprite/creditButton.png" id="3_oyk37"]
+[ext_resource type="Script" path="res://script/creditButton.gd" id="4_j2i62"]
+[ext_resource type="Texture2D" uid="uid://csp67ycemwqk1" path="res://sprite/credit/creditScreen1.png" id="4_w3p7j"]
+[ext_resource type="Texture2D" uid="uid://1o0u8mbpmgdo" path="res://sprite/credit/creditScreen2.png" id="5_ostjl"]
+[ext_resource type="Texture2D" uid="uid://bhqnq532yguks" path="res://sprite/background.png" id="6_avinm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pind"]
+size = Vector2(433, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3dyn"]
+size = Vector2(432, 154)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlkm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w3p7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ostjl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Title" type="Node2D"]
 
 [node name="BackGround" type="Sprite2D" parent="."]
 z_index = -1
-scale = Vector2(2.2, 2.2)
-texture = ExtResource("1_na58v")
+texture = ExtResource("1_vsjrh")
+
+[node name="PlayButton" type="Sprite2D" parent="."]
+texture = ExtResource("2_on70b")
+script = ExtResource("3_2yq2l")
+
+[node name="Area2D" type="Area2D" parent="PlayButton"]
+position = Vector2(470, 124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButton/Area2D"]
+position = Vector2(2.5, 12)
+shape = SubResource("RectangleShape2D_8pind")
+
+[node name="CreditButton" type="Sprite2D" parent="."]
+texture = ExtResource("3_oyk37")
+script = ExtResource("4_j2i62")
+
+[node name="Area2D" type="Area2D" parent="CreditButton"]
+position = Vector2(456, 390)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreditButton/Area2D"]
+position = Vector2(13, 8)
+shape = SubResource("RectangleShape2D_u3dyn")
+
+[node name="CreditBackground" type="Sprite2D" parent="CreditButton"]
+visible = false
+z_index = 90
+texture = ExtResource("6_avinm")
+
+[node name="Credit" type="AnimatedSprite2D" parent="CreditButton/CreditBackground"]
+z_index = 100
+sprite_frames = SubResource("SpriteFrames_jlkm6")
+
+[connection signal="mouse_entered" from="PlayButton/Area2D" to="PlayButton" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="PlayButton/Area2D" to="PlayButton" method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="CreditButton/Area2D" to="CreditButton" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="CreditButton/Area2D" to="CreditButton" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="CreditButton/Area2D" to="CreditButton" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CreditButton/Area2D" to="CreditButton" method="_on_area_2d_mouse_exited"]

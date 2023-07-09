@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56nlcq63k1ab"
-path="res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"
+uid="uid://csp67ycemwqk1"
+path="res://.godot/imported/creditScreen1.png-104998d4b52c094b7cb59869e6083ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/cursor/handBack.png"
-dest_files=["res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"]
+source_file="res://sprite/credit/creditScreen1.png"
+dest_files=["res://.godot/imported/creditScreen1.png-104998d4b52c094b7cb59869e6083ef2.ctex"]
 
 [params]
 

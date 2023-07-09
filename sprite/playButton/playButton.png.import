@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56nlcq63k1ab"
-path="res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"
+uid="uid://codu6yca78t0j"
+path="res://.godot/imported/playButton.png-06a1c79dcecff5d00963596f6181b0e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/cursor/handBack.png"
-dest_files=["res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"]
+source_file="res://sprite/playButton/playButton.png"
+dest_files=["res://.godot/imported/playButton.png-06a1c79dcecff5d00963596f6181b0e2.ctex"]
 
 [params]
 

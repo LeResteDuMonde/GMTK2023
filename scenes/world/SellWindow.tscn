@@ -27,7 +27,7 @@ shape = SubResource("RectangleShape2D_vqn1g")
 [node name="Buyer" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = ExtResource("3_pbhjq")
-animation = &"1"
+animation = &"2angry"
 
 [node name="Bubble" type="AnimatedSprite2D" parent="Buyer"]
 sprite_frames = ExtResource("5_lwmp7")

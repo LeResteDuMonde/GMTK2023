@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56nlcq63k1ab"
-path="res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"
+uid="uid://bmyujkaqfnq3x"
+path="res://.godot/imported/pnjPig3.png-45978736725cc8dd6db5f477abffb620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/cursor/handBack.png"
-dest_files=["res://.godot/imported/handBack.png-1cced6c4f7fff6eb8c6e4e338701e218.ctex"]
+source_file="res://sprite/buyers/pnjPig3.png"
+dest_files=["res://.godot/imported/pnjPig3.png-45978736725cc8dd6db5f477abffb620.ctex"]
 
 [params]
 

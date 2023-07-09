@@ -5,9 +5,15 @@ extends Node
 @onready var item = $Buyer/Bubble/Item
 
 var enabled = false
+var buyerSprite
 
 var size
 var type
+
+var sellingPrice = 1
+
+func _process(delta):
+	sellingPrice += delta / 45
 
 func pickInTable(r):
 	var c = 0
@@ -20,8 +26,10 @@ func pickInTable(r):
 				return
 
 func newBuyer():
-	if(enabled): disatifyBuyer()
-	var buyerSprite = randi_range(1,5)
+	if(enabled): 
+		disatifyBuyer()
+		await TimerManager.sleep(0.5)
+	buyerSprite = randi_range(1,5)
 	buyer.play(str(buyerSprite))
 	
 	var totalReceived = buyTable.count_received()
@@ -40,6 +48,7 @@ func newBuyer():
 		2: itemSprite += "Potion"
 		3: itemSprite += "Sword"
 	
+	buyTable.receivedItems[size-1][type-1] -= 1 
 	item.play(itemSprite)
 	AudioManager.play("sounds/appear",2)
 	
@@ -49,7 +58,7 @@ func newBuyer():
 func sell(item):
 	if(item.size == size && item.type == type):
 		AudioManager.play("sounds/sell")
-		MoneyManager.addMoney(item.getPrice()*2)
+		MoneyManager.addMoney(item.getPrice()*sellingPrice)
 	else:
 		MoneyManager.addMoney(0)
 		disatifyBuyer()
@@ -61,6 +70,7 @@ func removeBuyer():
 	buyer.visible = false
 	
 func disatifyBuyer():
+	buyer.play(str(buyerSprite) + "angry")
 	ShakeManager.shake(3,0.2)
 	AudioManager.play("sounds/disatisfied",3)
 	HealthManager.damage()
