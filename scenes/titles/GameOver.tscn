@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6xjsb1wi8v05"]
+[gd_scene load_steps=4 format=3 uid="uid://b6xjsb1wi8v05"]
 
 [ext_resource type="Texture2D" uid="uid://bhqnq532yguks" path="res://sprite/background.png" id="1_pww2j"]
 [ext_resource type="SpriteFrames" uid="uid://cuibg6b6k7der" path="res://animations/scoreboard.tres" id="2_hssjm"]
-[ext_resource type="FontFile" uid="uid://bfk6rsuphhq0g" path="res://font/Comic Sans MS.ttf" id="3_fiu3b"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_a63y8"]
-font = ExtResource("3_fiu3b")
-font_size = 100
+[ext_resource type="LabelSettings" uid="uid://cxdjnhfqevsf3" path="res://font/label.tres" id="3_r118g"]
 
 [node name="GameOver" type="Node2D"]
 
@@ -25,4 +21,4 @@ offset_top = 139.0
 offset_right = 205.0
 offset_bottom = 332.0
 text = "999"
-label_settings = SubResource("LabelSettings_a63y8")
+label_settings = ExtResource("3_r118g")

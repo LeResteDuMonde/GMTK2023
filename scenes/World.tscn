@@ -24,7 +24,7 @@ position = Vector2(-390, 200)
 width = 8
 
 [node name="BuyTable" parent="." instance=ExtResource("5_4kxcr")]
-position = Vector2(-144, -361)
+position = Vector2(-144, -373)
 
 [node name="Items" type="Node2D" parent="."]
 

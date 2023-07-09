@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cxdjnhfqevsf3"]
+
+[ext_resource type="FontFile" uid="uid://0m37gkhljbcw" path="res://font/gmtk2023font1-Regular.ttf" id="1_yqsfh"]
+
+[resource]
+font = ExtResource("1_yqsfh")
+font_size = 100

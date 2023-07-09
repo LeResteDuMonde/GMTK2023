@@ -5,9 +5,10 @@ var money
 @onready var display = GameManager.main.get_node("World/Money/Label")
 @onready var payLabel = GameManager.main.get_node("World/Money/Pay")
 @onready var sellLabel = GameManager.main.get_node("World/Money/Sell")
+
 var payLabelPosition
 var sellLabelPosition
-
+		
 func reset():
 	money = 100
 	updateDisplay()

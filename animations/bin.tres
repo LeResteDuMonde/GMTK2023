@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bul6yjoqb154n"]
+
+[ext_resource type="Texture2D" uid="uid://bnrypntgfk6w1" path="res://sprite/world/bin/binClosed.PNG" id="1_gyh6r"]
+[ext_resource type="Texture2D" uid="uid://d1epuw45ebyq5" path="res://sprite/world/bin/binOpen.PNG" id="2_hxnot"]
+[ext_resource type="Texture2D" uid="uid://l1xjtofadrar" path="res://sprite/world/bin/binClosed2.png" id="2_qvnl2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gyh6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qvnl2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hxnot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gyh6r")
+}],
+"loop": false,
+"name": &"open",
+"speed": 8.0
+}]

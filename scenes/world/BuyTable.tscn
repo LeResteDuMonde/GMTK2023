@@ -33,14 +33,14 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_bgbip")
 
 [node name="Table" type="AnimatedSprite2D" parent="."]
-position = Vector2(657, 377)
+position = Vector2(659, 391)
 sprite_frames = ExtResource("3_ncs8d")
 autoplay = "default"
 frame = 1
 frame_progress = 0.0259291
 
 [node name="Timer" type="AnimatedSprite2D" parent="."]
-position = Vector2(648, 390)
+position = Vector2(648, 400)
 sprite_frames = SubResource("SpriteFrames_rv2jr")
 
 [node name="BarScale" type="Node2D" parent="Timer"]

@@ -35,6 +35,9 @@ func _ready():
 	get_node("Sprite2D").visible = false
 	highlight.material = highlight.material.duplicate()
 	
+	highlight.scale = Vector2(1.1,1.1)
+#	tableSpriteHighLight.scale = Vector2(1.1,1.1)
+	
 	var itemSprite
 	
 	match size:
@@ -67,15 +70,44 @@ func _on_mouse_entered():
 	entered = true
 	if highlight != null:
 		CursorManager.hover()
-		if(onTable): tableSpriteHighLight.visible = true
-		else: highlight.visible = true
+		highlightItem(true)
+#		if(onTable): 
+#			tableSpriteHighLight.visible = true
+#			tableSprite.visible = false
+#		else: 
+#			highlight.visible = true
+#			sprite.visible = false
+
+func highlightItem(state):
+		if(CursorManager.dragging): return
+#		if(onTable): 
+#			tableSpriteHighLight.visible = state
+#			tableSprite.visible = !state
+#		else:
+#			highlight.visible = state
+#			sprite.visible = !state
+#
+		if(state):
+			sprite.scale = Vector2(1.1,1.1)
+			tableSprite.scale = Vector2(1.1,1.1)
+			AudioManager.play("sounds/selectItem",2,0,-10)
+		else:
+			sprite.scale = Vector2(1,1)
+			tableSprite.scale = Vector2(1,1)
 			
 func _on_mouse_exited():
 	CursorManager.unhover()
 	entered = false
 	if highlight != null:
-		tableSpriteHighLight.visible = false
-		highlight.visible = false
+		highlightItem(false)
+##		tableSpriteHighLight.visible = false
+##		highlight.visible = false
+#		if(onTable): 
+#			tableSpriteHighLight.visible = true
+#			tableSprite.visible = false
+#		else: 
+#			highlight.visible = true
+#			sprite.visible = false
 		
 func can_place():
 	if not is_instance_valid(area): return
@@ -99,8 +131,8 @@ func take():
 			parent.remove(self)
 	CursorManager.take()
 	tableSprite.visible = false
-	tableSpriteHighLight.visible = false
-	sprite.visible = true
+#	tableSpriteHighLight.visible = false
+	sprite.visible = false
 	highlight.visible = true
 	onTable = false
 	
@@ -125,6 +157,9 @@ func place():
 				2: soundType = "Potion"
 				3: soundType = "Sword"
 			
+			sprite.visible = true
+			highlight.visible = false
+			highlightItem(false)
 			AudioManager.play("sounds/deposit"+soundType)
 
 func _unhandled_input(event):
