@@ -1,9 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dynmmb7xeph2s"]
 
-[ext_resource type="Texture2D" uid="uid://bngih7ai7y08i" path="res://sprite/world/highlightCellErr.png" id="1_47bmg"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_xcnp3"]
 
 [node name="HighLightCellErr" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.98, 0.98)
-texture = ExtResource("1_47bmg")
+modulate = Color(1, 0, 0, 0.784314)
+z_index = -10
+scale = Vector2(125, 125)
+texture = SubResource("CanvasTexture_xcnp3")

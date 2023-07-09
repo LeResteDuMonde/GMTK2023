@@ -2,9 +2,9 @@ extends Node
 
 var cursor
 
-var open = load("res://sprite/cursor/HandBack.png")
-var point = load("res://sprite/cursor/HandPoint.png")
-var hold = load("res://sprite/cursor/HandHold.png")
+var open = load("res://sprite/cursor/handBack.png")
+var point = load("res://sprite/cursor/handPoint.png")
+var hold = load("res://sprite/cursor/handHold.png")
 
 func _ready():
 #	cursor = GameManager.main.get_node("Cursor")

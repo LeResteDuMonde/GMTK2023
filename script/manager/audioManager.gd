@@ -6,6 +6,16 @@ var music = preload("res://audio/musics/gmtk2023Ost1.wav")
 var musicBus = AudioServer.get_bus_index("Music")
 var musicPitchEffect = AudioServer.get_bus_effect(musicBus, 0)
 
+var volume
+var isMute = false
+
+func _ready():
+	volume = musicPlayer.volume_db
+	
+func mute():
+	musicPlayer.volume_db = volume if isMute else -80
+	isMute = !isMute
+
 func start_game_music():
 	musicPlayer.stream = music
 	set_music_speed(1)

@@ -18,6 +18,7 @@ func _ready():
 #	AudioManager.play("sounds/hit")
 	
 func start():
+	AudioManager.play("sounds/click")
 	# Reset input status
 	CursorManager.reset()
 	# Reset table and buyer

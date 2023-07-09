@@ -8,24 +8,26 @@ font = ExtResource("2_7q1tu")
 font_size = 100
 
 [node name="Money" type="AnimatedSprite2D"]
+position = Vector2(-60, -4)
 sprite_frames = ExtResource("1_tewrn")
 autoplay = "default"
 frame_progress = 0.930952
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
-offset_left = 490.0
-offset_top = 206.0
-offset_right = 793.0
-offset_bottom = 399.0
-text = "999"
+offset_left = 382.0
+offset_top = 238.0
+offset_right = 685.0
+offset_bottom = 431.0
+text = "9999"
 label_settings = SubResource("LabelSettings_cnopt")
+horizontal_alignment = 2
 
 [node name="Pay" type="Label" parent="."]
 visible = false
-offset_left = -640.0
+offset_left = -572.0
 offset_top = -372.0
-offset_right = -470.0
+offset_right = -402.0
 offset_bottom = -228.0
 text = "-99"
 label_settings = SubResource("LabelSettings_cnopt")
@@ -38,15 +40,15 @@ sprite_frames = ExtResource("1_tewrn")
 
 [node name="Sell" type="Label" parent="."]
 visible = false
-offset_left = 686.0
-offset_top = 225.0
-offset_right = 856.0
-offset_bottom = 369.0
-text = "+99"
+offset_left = 590.0
+offset_top = 285.0
+offset_right = 897.0
+offset_bottom = 429.0
+text = "+999"
 label_settings = SubResource("LabelSettings_cnopt")
 horizontal_alignment = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sell"]
-position = Vector2(39, -45)
+position = Vector2(167, -41)
 scale = Vector2(0.533333, 0.533333)
 sprite_frames = ExtResource("1_tewrn")

@@ -17,6 +17,7 @@ frame_progress = 0.607861
 script = ExtResource("2_soq72")
 
 [node name="TimerBar" parent="." instance=ExtResource("2_6dajr")]
+scale = Vector2(1, 1.05)
 
 [node name="Area2D" type="Area2D" parent="."]
 

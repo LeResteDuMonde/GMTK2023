@@ -1,9 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://mg7fcrkvqfn4"]
 
-[ext_resource type="Texture2D" uid="uid://bhn0v3tjnl3p0" path="res://sprite/world/highlightCellOk.png" id="1_ripe5"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_2177b"]
 
 [node name="HighlightCell" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.98, 0.98)
-texture = ExtResource("1_ripe5")
+modulate = Color(1, 1, 0, 0.784314)
+z_index = -10
+scale = Vector2(125, 125)
+texture = SubResource("CanvasTexture_2177b")
